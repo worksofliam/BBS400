@@ -1,0 +1,56 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF05(05 'Refresh')
+     A                                      CF12(12 'Go back')
+     A                                      CF17(17 'Incl/Excl Dlted')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 U2UMSGL')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            KEYLST        78A  O 23  2COLOR(BLU)
+     A            MSGLIN        78A  O 24  2
+     A                                      DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B 10  3VALUES(' ' '3' '4' '5' '7')
+     A            SCRSBJ        40A  O 10  6
+     A            SCRSND        10A  O 10 48
+     A            SCRDAT         8A  O 10 59
+     A            SCRTIM          T  O 10 68TIMFMT(*HMS)
+     A            SCRSTA         1A  O 10 78
+     A            SCRMUI        32A  H
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLSIZ(20)
+     A                                      SFLPAG(12)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(U2UMSGL BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - User-to-User Messages'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22COLOR(BLU)
+     A            SCRLVD        15A  O  3 25COLOR(WHT)
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  7  3'3=Reply   4=Delete   5=Display   7-
+     A                                      =Mark Read/Unread'
+     A                                      COLOR(BLU)
+     A                                  9  2'Opt Subject                       -
+     A                                                  From       Date     Tim-
+     A                                      e     Sta.'
+     A                                      DSPATR(HI)

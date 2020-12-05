@@ -1,0 +1,71 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF12(12 'Cancel')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 NEWUSR')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - New User Registration'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A*****************************************************************
+     A          R BODY                      PUTOVR
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(NEWUSR BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A                                  5 12'Nickname  :'
+     A            SCRNCK        10A  B  5 24DSPATR(HI)
+     A                                  6  2'Private?'
+     A                                  7 12'Real Name :'
+     A            SCRRNA        40A  B  7 24CHECK(LC)
+     A                                      DSPATR(HI)
+     A            SCRRNAH        1A  B  7  5OVRDTA
+     A                                      DFT('Y') VALUES('Y' 'N')
+     A                                      DSPATR(HI)
+     A                                  9 12'Location  :'
+     A            SCRLCC         2A  B  9 24DSPATR(HI)
+     A            SCRLCT        40A  B  9 28CHECK(LC)
+     A                                      DSPATR(HI)
+     A            SCRLOCH        1A  B  9  5OVRDTA
+     A                                      DFT('Y') VALUES('Y' 'N')
+     A                                      DSPATR(HI)
+     A                                 11 12'Gender  . :'
+     A            SCRGND         1A  B 11 24DSPATR(HI)
+     A            SCRGDRH        1A  B 11  5OVRDTA
+     A                                      DFT('Y') VALUES('Y' 'N')
+     A                                      DSPATR(HI)
+     A                                 13 12'e-mail  . :'
+     A            SCREML        40A  B 13 24CHECK(LC)
+     A                                      DSPATR(HI)
+     A            SCREMLH        1A  B 13  5OVRDTA
+     A                                      DFT('Y') VALUES('Y' 'N')
+     A                                      DSPATR(HI)
+     A                                 16  2'Notify when receiving new messages-
+     A                                      ? :'
+     A            SCRNFY         1A  B 16 40OVRDTA
+     A                                      DFT('N') VALUES('Y' 'N')
+     A                                      DSPATR(HI)
+     A                                 20  2'Password . . . . :'
+     A            SCRPW1        10A  B 20 21DSPATR(ND)
+     A                                 21  2'Re-type Password :'
+     A            SCRPW2        10A  B 21 21DSPATR(ND)
+     A                                  7 71'(optional)'
+     A                                  9 28'(optional)'
+     A                                 13 67'(optional)'
+     A                                  9 71'(optional)'
+     A                                 11 28'(optional)'
+     A                                 16 44'(Y only if the Nickname is'
+     A                                 17 45'the same as the AS/400 user)'
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 23  2'F12=Cancel'
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)

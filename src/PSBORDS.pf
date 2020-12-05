@@ -1,0 +1,10 @@
+                                            UNIQUE
+                R RSBORD
+                  SBRBRD         8A         TEXT('Parent Board')
+                  SBRSHT         8A         TEXT('Short Name')
+                  SBRLNG        30A         TEXT('Long Name')
+                  SBRALV         2P 0       TEXT('Min. Access Level')
+                  SBRRLV         2P 0       TEXT('Min. Read Level')
+                  SBRPLV         2P 0       TEXT('Min. Post Level')
+                K SBRBRD
+                K SBRSHT

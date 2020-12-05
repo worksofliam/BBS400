@@ -1,0 +1,43 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 WELCM')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R BODY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(WELCM BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A                                  3 33'  Welcome to MyBBS  '
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                 20 59'BBS400 V0R0M0'
+     A                                      COLOR(RED)
+     A                                 21 60'(c) 2020 David Asta'
+     A                                      COLOR(PNK)
+     A                                 22 60'Under MIT License'
+     A                                      COLOR(WHT)
+     A                                 23  3'ENTER=Continue'
+     A                                      COLOR(BLU)
+     A                                  6 19'This Bulletin Board System (BBS) i-
+     A                                      s running'
+     A                                      COLOR(BLU)
+     A                                 12  6'Though you can use a standard Teln-
+     A                                      et client, to enjoy the full featur-
+     A                                      e'
+     A                                  7 27'on an IBM AS/400e Model 150'
+     A                                      COLOR(BLU)
+     A                                  9 13'I believe BBS400 is the first and -
+     A                                      only BBS software for'
+     A                                      COLOR(PNK)
+     A                                 10  3'IBM midrange computers. If you hav-
+     A                                      e heard of any other, please let me-
+     A                                       know.'
+     A                                      COLOR(PNK)
+     A                                 13  3'I strongly recommend to use a 5250-
+     A                                       emulator. There are many. And some-
+     A                                       free.'
+     A                                 14 13'My personal favourite is Nexus Ter-
+     A                                      minal, but if you want'
+     A                                 15 21'something free, then I recommend t-
+     A                                      n5250j'

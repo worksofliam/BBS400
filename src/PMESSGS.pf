@@ -1,0 +1,14 @@
+                                            UNIQUE
+                R RMESSG
+                  MSGBRD         8A         TEXT('Board Short')
+                  MSGSBD         8A         TEXT('Sub-Board Short')
+                  MSGUID        32A         TEXT('Message UID')
+                  MSGSBJ        45A         TEXT('Subject')
+                  MSGDAT          L         TEXT('Date posted')
+                  MSGTIM          T         TEXT('Time posted')
+                                            TIMFMT(*HMS)
+                  MSGSND        10A         TEXT('Sender')
+                  MSGTXT      1125A         TEXT('Message Text')
+                K MSGBRD
+                K MSGSBD
+                K MSGUID

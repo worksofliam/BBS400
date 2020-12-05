@@ -1,0 +1,70 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A  30                                  CF06(06 'Reply Post')
+     A                                      CF07(07 'Reply User')
+     A                                      CF12(12 'Go back')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 RDMSG')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - Read Message'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A*****************************************************************
+     A          R BODY
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(RDMSG BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A  30                              4 62'Board :'
+     A  30        SCRBRD         8   O  4 70DSPATR(HI)
+     A                                  5  2'Sent . . . :'
+     A            SCRDAT         8A  O  5 15DSPATR(HI)
+     A            SCRTIM          T  O  5 25DSPATR(HI)
+     A                                      TIMFMT(*HMS)
+     A  30                              5 58'Sub-Board :'
+     A  30        SCRSBD         8   O  5 70DSPATR(HI)
+     A                                  6  2'Subject  . :'
+     A            SCRSBJ        45A  O  6 15DSPATR(HI)
+     A                                  6 62'From  :'
+     A            SCRSND        10A  O  6 70DSPATR(HI)
+     A            SCRM01        75A  O  8  6DSPATR(HI)
+     A            SCRM02        75A  O  9  6DSPATR(HI)
+     A            SCRM03        75A  O 10  6DSPATR(HI)
+     A            SCRM04        75A  O 11  6DSPATR(HI)
+     A            SCRM05        75A  O 12  6DSPATR(HI)
+     A            SCRM06        75A  O 13  6DSPATR(HI)
+     A            SCRM07        75A  O 14  6DSPATR(HI)
+     A            SCRM08        75A  O 15  6DSPATR(HI)
+     A            SCRM09        75A  O 16  6DSPATR(HI)
+     A            SCRM10        75A  O 17  6DSPATR(HI)
+     A            SCRM11        75A  O 18  6DSPATR(HI)
+     A            SCRM12        75A  O 19  6DSPATR(HI)
+     A            SCRM13        75A  O 20  6DSPATR(HI)
+     A            SCRM14        75A  O 21  6DSPATR(HI)
+     A            SCRM15        75A  O 22  6DSPATR(HI)
+     A            SCRMUI        32A  H
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A  30                             23  2'F6=Reply to Post   F7=Reply to Use-
+     A                                      r   F12=Go back'
+     A  30                                  COLOR(BLU)
+     A N30                             23  2'F7=Reply to User   F12=Go back'
+     A N30                                  COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)

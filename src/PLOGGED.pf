@@ -1,0 +1,9 @@
+                R RLOGGD
+                  LGDNCK        10A         TEXT('Nickname')
+                  LGDDAT          L         TEXT('Logged Date')
+                  LGDTIM          T         TEXT('Logged Time')
+                  LGDLVL         2P 0       TEXT('Access Level')
+                  LGDLCC         2A         TEXT('Location Country Code')
+                  LGDLCT        40A         TEXT('Location City')
+                  LGDNLG         6P 0       TEXT('Total number of logons')
+                K LGDNCK

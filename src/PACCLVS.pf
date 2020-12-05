@@ -1,0 +1,12 @@
+                                            UNIQUE
+                R RACCLV
+                  LVLLVL         2P 0       TEXT('Level')
+                  LVLDSC        15A         TEXT('Description')
+                  LVLEXP         3P 0       TEXT('Expire after days')
+                  LVLEXL         2P 0       TEXT('Expire to Lvl')
+                  LVLALU         1A         TEXT('Auth. List Users')
+                  LVLASI         1A         TEXT('Auth. Sys. Info.')
+                  LVLAPM         1A         TEXT('Auth. Post msgs.')
+                  LVLAMU         1A         TEXT('Auth. Msg. users')
+                  LVLAWO         1A         TEXT('Auth. See online users')
+                K LVLLVL

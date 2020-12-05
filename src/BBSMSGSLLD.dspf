@@ -1,0 +1,63 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF05(05 'Refresh')
+     A                                      CF12(12 'Go back')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 MSGLLLD')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 23  2'F5=Refresh   F12=Go back'
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B  9  3VALUES(' ' '5' '7')
+     A            SCRBRD         8A  O  9  6
+     A            SCRSBD         8A  O  9 15
+     A            SCRSBJ        27A  O  9 24
+     A            SCRDAT         8A  O  9 52
+     A            SCRTIM         8A  O  9 61
+     A            SCRSND        10A  O  9 71
+     A  43                                  COLOR(RED)
+     A  44                                  COLOR(PNK)
+     A  45                                  COLOR(WHT)
+     A            SCRMUI        32A  H
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(13)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(MSGLLLD BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A            SCRSCR        10A  O  1  3
+     A                                  1 20'BBS400 - Messages Since Last Login-
+     A                                       Date'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A                                  5  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  6  3'5=Display   7=Reply'
+     A                                      COLOR(BLU)
+     A                                  8  2'Opt Board    Sub-Brd  Subject     -
+     A                                                      Date     Time      -
+     A                                      Posted by'
+     A                                      DSPATR(HI)

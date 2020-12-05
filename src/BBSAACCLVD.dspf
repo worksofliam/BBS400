@@ -1,0 +1,60 @@
+                                            DSPSIZ(24 80 *DS3)
+                                            CF05(05 'Refresh')
+                                            CF06(06 'Create')
+                                            CF12(12 'Go back')
+                                            CF23(23 'More options')
+                R FOOTER
+                                            OVERLAY
+                                       23  2'F5=Refresh   F6=Create   F12=Go ba-
+                                            ck   F23=More options'
+                                            COLOR(BLU)
+                  MSGLIN        78A  O 24  2
+                                            DSPATR(HI)
+                R SF                        SFL
+                  SCROPT         2A  B 11  2VALUES(' ' '4' '7' '8' '9' '10'    -
+                                            '11' '12' '13' '14')
+                  SCRLVL         2Y 0O 11  6EDTCDE(1)
+                  SCRLVD        15A  O 11 10
+                  SCREXP         3Y 0O 11 28EDTCDE(1)
+                  SCREXL         2Y 0O 11 37EDTCDE(1)
+                  SCRALU         1A  O 11 44
+                  SCRASI         1A  O 11 51
+                  SCRAPM         1A  O 11 58
+                  SCRAMU         1A  O 11 65
+                  SCRAWO         1A  O 11 75
+                R SFLCTL                    SFLCTL(SF)
+                                            OVERLAY
+        40                                  SFLDSP
+                                            SFLDSPCTL
+        41                                  SFLCLR
+        42                                  SFLEND(*MORE)
+                                            SFLSIZ(20)
+                                            SFLPAG(11)
+                  SCRSCR        10A  O  1  3
+                                        1 26'BBS400 - Access Levels'
+                                            DSPATR(HI)
+                  SCRBBS        40A  O  2  3
+                                            COLOR(RED)
+                                        1 73DATE
+                                            EDTCDE(Y)
+                                        2 73TIME
+                  SCRNCK        10A  O  3  3
+                                            COLOR(BLU)
+                                            DSPATR(RI)
+                                        3 15'Level:'
+                  SCRLVL         2Y 0O  3 22
+                                            COLOR(BLU)
+                  SCRLVD        15A  O  3 25
+                                            COLOR(WHT)
+                                        5  2'Type options, press Enter.'
+                                            COLOR(BLU)
+                  OPTSL1        77A  O  6  3COLOR(BLU)
+                  OPTSL2        77A  O  7  3COLOR(BLU)
+                                        9  2'                             Expir-
+                                            e     List   System        Message -
+                                             See Who''s'
+                                            DSPATR(HI)
+                                       10  2'Opt Level                 days  to-
+                                             Lvl  Users  Info.   Post  Users   -
+                                             Online'
+                                            DSPATR(HI)

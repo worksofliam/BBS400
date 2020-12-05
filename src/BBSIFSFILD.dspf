@@ -1,0 +1,69 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF05(05 'Refresh')
+     A  50                                  CF06(06 'Add')
+     A                                      CF12(12 'Go back')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 IFSL')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            KEYLST        78A  O 23  2COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B 10  3VALUES(' ' '2' '3' '4' '5'         -
+     A                                      '7' '8' '9')
+     A            SCRNAM        20A  O 10  6
+     A            SCRDSC        30A  O 10 27
+     A            SCRCAT        10A  O 10 58
+     A            SCRALV         2Y 0O 10 70EDTCDE(2)
+     A                                 11  6'Path:'
+     A                                      DSPATR(HI)
+     A            SCRPTH        30A  O 11 12
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLDROP(CF10)
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(6)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(IFSL BBSHELPPNL)
+     A                                      HLPARA(01 001 02 80)
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - IFS Files List'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A N50                              7  3'5=Display'
+     A N50                                  COLOR(BLU)
+     A  50                              7  3'2=Change Access Level   3=Change P-
+     A                                      ath   4=Delete   5=Display   7=Rena-
+     A                                      me'
+     A  50                                  COLOR(BLU)
+     A  50                              8  3'8=Change Description    9=Change C-
+     A                                      ategory'
+     A  50                                  COLOR(BLU)
+     A                                  9  2'Opt Filename             Descripti-
+     A                                      on                    Category'
+     A                                      DSPATR(HI)
+     A  50                              9 70'Access Lvl.'
+     A                                      DSPATR(HI)

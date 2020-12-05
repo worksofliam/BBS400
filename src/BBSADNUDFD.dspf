@@ -1,0 +1,64 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF10(10)
+     A                                      CF12(12)
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 NUSRDF')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - New User default values'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A*****************************************************************
+     A          R BODY
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(NUSRDF BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A                                  6  3'Level  . . . . . . . . . . . :'
+     A            SCRNUL         2Y 0B  6 35
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                  6 43'0 - 99'
+     A                                  8  3'Ask in registration survey'
+     A            SCRRNA         1A  B  9 35VALUES('Y' 'N')
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                  9 17'Real Name  . . :'
+     A            SCRGND         1A  B 10 35VALUES('Y' 'N')
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                 10 17'Gender . . . . :'
+     A            SCRLOC         1A  B 11 35VALUES('Y' 'N')
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                 11 17'Location . . . :'
+     A            SCREML         1A  B 12 35VALUES('Y' 'N')
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                 12 17'e-mail address :'
+     A            SCRSVY         5A  H
+     A                                  9 43'Y, N'
+     A                                 10 43'Y, N'
+     A                                 11 43'Y, N'
+     A                                 12 43'Y, N'
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            KEYSLS        78A  O 23  2
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)

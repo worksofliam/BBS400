@@ -1,0 +1,13 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CA03(03 'Exit')
+     A          R ASSUME
+     A                                      ASSUME
+     A                                  1  2' '
+     A          R WINASK
+     A                                      OVERLAY
+     A                                      WINDOW(*DFT 3 20 *NOMSGLIN)
+     A                                      WDWTITLE((*TEXT ' Enter Y or N ')  -
+     A                                      (*DSPATR RI))
+     A            QUESTION      15A     1  1
+     A            YESNO          1A  B  1 18CHECK(ME)
+     A                                  3  1'F3=Exit' COLOR(BLU)

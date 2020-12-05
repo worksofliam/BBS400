@@ -1,0 +1,6 @@
+                                            UNIQUE
+                R RBOARD
+                  BRDSHT         8A         TEXT('Short Name')
+                  BRDLNG        30A         TEXT('Long Name')
+                  BRDALV         2P 0       TEXT('Min. Access Level')
+                K BRDSHT

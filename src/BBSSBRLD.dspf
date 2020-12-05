@@ -1,0 +1,72 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF05(05 'Refresh')
+     A  50                                  CF06(06 'Create')
+     A                                      CF12(12 'Go back')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 SBRDL')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            KEYLST        78A  O 23  2COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B 10  3VALUES(' ' '1' '2' '3' '4'         -
+     A                                      '5' '7')
+     A            SCRBRD         8A  O 10  7
+     A            SCRLNG        30A  O 10 17
+     A            SCRNMS         5Y 0O 10 50EDTCDE(1)
+     A            SCRRLV         2Y 0O 10 63EDTCDE(1)
+     A            SCRPLV         2Y 0O 10 70EDTCDE(1)
+     A            SCRALV         2Y 0O 10 77EDTCDE(2)
+     A                                 11 17'Sub-Board Internal Name:'
+     A                                      DSPATR(HI)
+     A            SCRSBS         8A  O 11 42
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLDROP(CF10)
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(6)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(SBRDL BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - Sub-Boards List'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A N50                              7  3'1=Post   5=Display Messages'
+     A N50                                  COLOR(BLU)
+     A  50                              7  3'1=Change Access Level   2=Change R-
+     A                                      ead Level   3=Change Post Level'
+     A  50                                  COLOR(BLU)
+     A  50                              8  3'4=Delete                7=Rename'
+     A  50                                  COLOR(BLU)
+     A                                  8 62'Access Lvl.'
+     A                                      DSPATR(HI)
+     A                                  9  2'Opt  Board     Sub-Board          -
+     A                                                    # Messages  Read   Po-
+     A                                      st'
+     A                                      DSPATR(HI)
+     A  50                              9 75'Access'
+     A                                      DSPATR(HI)

@@ -1,0 +1,11 @@
+                                            UNIQUE
+                R RUUMSG
+                  UUMUID        32A         TEXT('Unique ID')
+                  UUMSTA         1A         TEXT('Status')
+                  UUMSND        10A         TEXT('Sender Nickname')
+                  UUMRCP        10A         TEXT('Recipient Nickname')
+                  UUMSBJ        45A         TEXT('Subject')
+                  UUMDAT          L         TEXT('Date sent')
+                  UUMTIM          T         TEXT('Time sent')
+                  UUMTXT      1125A         TEXT('Message text')
+                K UUMUID

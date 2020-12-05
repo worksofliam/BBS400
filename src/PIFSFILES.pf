@@ -1,0 +1,8 @@
+                                            UNIQUE
+                R RIFSFILE
+                  IFSFNM        20A         TEXT('Filename')
+                  IFSPTH        30A         TEXT('Dir Fullpath')
+                  IFSDSC        30A         TEXT('Description')
+                  IFSCAT        10A         TEXT('Category')
+                  IFSALV         2P 0       TEXT('Access Lvl')
+                K IFSFNM

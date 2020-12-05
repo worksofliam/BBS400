@@ -1,0 +1,67 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF05(05 'Refresh')
+     A  50                                  CF06(06 'Create')
+     A                                      CF12(12 'Go back')
+     A                                      CA03(03 'Exit')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 BRDL')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            KEYLST        78A  O 23  2COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B 10  3VALUES(' ' '4' '5' '7' '8' '9')
+     A            SCRSHT         8A  O 10  7
+     A            SCRLNG        30A  O 10 17
+     A            SCRNSB         4Y 0O 10 52EDTCDE(1)
+     A            SCRNMS         4Y 0O 10 67EDTCDE(1)
+     A            SCRALV         2Y 0O 10 78EDTCDE(2)
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(12)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(BRDL BBSHELPPNL)
+     A                                      HLPARA(01 001 02 80)
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - Boards List'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A N50                              7  3'5=Display Sub-Boards'
+     A N50                                  COLOR(BLU)
+     A  50                              7  3'4=Delete   5=Display Sub-Boards   -
+     A                                      7=Rename Short   8=Rename Long'
+     A  50                                  COLOR(BLU)
+     A  50                              8  3'9=Change Access Level'
+     A  50                                  COLOR(BLU)
+     A                                  9  2'Opt  Board                        -
+     A                                                      Sub-Boards     # Po-
+     A                                      sts'
+     A                                      DSPATR(HI)
+     A  50                              8 76'Acce.'
+     A  50                                  DSPATR(HI)
+     A  50                              9 76'Level'
+     A  50                                  DSPATR(HI)

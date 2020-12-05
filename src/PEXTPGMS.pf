@@ -1,0 +1,8 @@
+                                            UNIQUE
+                R RETPGM
+                  EXTOPT         2P 0
+                  EXTNAM        30A
+                  EXTPGM        10A
+                  EXTLIB        10A
+                  EXTALV         2P 0
+                K EXTOPT

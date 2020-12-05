@@ -1,0 +1,94 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF10(10)
+     A                                      CF12(12)
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 GENCNF')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - General Configuration'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A*****************************************************************
+     A          R BODY
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(GENCNF BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A          H                           HLPPNLGRP(GCBBSNAM BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRNAM)
+     A          H                           HLPPNLGRP(GCLOCLCR BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRLCR)
+     A          H                           HLPPNLGRP(GCLOCLCT BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRLCT)
+     A          H                           HLPPNLGRP(GCTZC BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRTZC)
+     A          H                           HLPPNLGRP(GCCLOSED BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRCLO)
+     A          H                           HLPPNLGRP(GCSWE BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRSWE)
+     A          H                           HLPPNLGRP(GCSAL BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRSAL)
+     A          H                           HLPPNLGRP(GCNFY BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRNFY)
+     A                                  6  3'BBS Name . . . . . . . . . . :'
+     A            SCRNAM        40A  B  6 34CHECK(LC)
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                  7  3'Location . . . . . . . . . . :'
+     A            SCRLCR         2A  B  7 34
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A            SCRLCT        40A  B  8 34CHECK(LC)
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                  9  3'Local Time Zone  . . . . . . :'
+     A            SCRTZC         3A  B  9 34
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                 12  3'Closed to New Users  . . . . :'
+     A            SCRCLO         1A  B 12 34
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                      VALUES('Y' 'N')
+     A                                 13  3'Show Welcome screen  . . . . :'
+     A            SCRSWE         1A  B 13 34
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                      VALUES('Y' 'N')
+     A                                 14  3'Show Access Lvl. Description :'
+     A            SCRSAL         1A  B 14 34
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                      VALUES('Y' 'N')
+     A                                 16  3'Notify New User Registration :'
+     A            SCRNFY        10A  B 16 34
+     A N80                                  DSPATR(HI)
+     A  80                                  DSPATR(PR)
+     A                                  7 50'ISO 3166-1 alpha-2 country code'
+     A                                  9 50'CET, EST, UTC, etc.'
+     A                                 12 50'Y, N'
+     A                                 13 50'Y, N'
+     A                                 14 50'Y, N'
+     A                                 15 50'Y, N'
+     A                                 16 50'Name, blank for no notification'
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            KEYSLS        78A  O 23  2
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)

@@ -1,0 +1,72 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A  30 33N29                            CF04(04 'Prompt')
+     A  33                                  CF06(06 'Send')
+     A                                      CF12(12 'Cancel')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 NEWMSG')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A  30                              1 26'BBS400 - Post Message'
+     A  30                                  DSPATR(HI)
+     A  31                              1 26'BBS400 - Message to User'
+     A  31                                  DSPATR(HI)
+     A  32                              1 26'BBS400 - Message to SysOp'
+     A  32                                  DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A*****************************************************************
+     A          R BODY
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(NEWMSG BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A  30                              5  2'Posting on :'
+     A  30        SCRPOB         8A  B  5 15DSPATR(HI) CHECK(LC)
+     A  29                                  DSPATR(PR)
+     A  30N29                           5 24'+'
+     A  30        SCRPOS        30A  B  5 26DSPATR(HI)
+     A  29                                  DSPATR(PR)
+     A  30N29                           5 57'+'
+     A N30                              5  2'Message to :'
+     A  31        SCRUSR        10A  B  5 15DSPATR(HI)
+     A  32                              5 15'SysOp'
+     A                                  6  2'Subject  . :'
+     A            SCRSBJ        45A  B  6 15DSPATR(HI)
+     A                                      CHECK(LC)
+     A                                  7  2'Message (max. 1125 characters) :'
+     A            SCRM01        75A  B  8  6CHECK(LC) DSPATR(HI)
+     A            SCRM02        75A  B  9  6CHECK(LC) DSPATR(HI)
+     A            SCRM03        75A  B 10  6CHECK(LC) DSPATR(HI)
+     A            SCRM04        75A  B 11  6CHECK(LC) DSPATR(HI)
+     A            SCRM05        75A  B 12  6CHECK(LC) DSPATR(HI)
+     A            SCRM06        75A  B 13  6CHECK(LC) DSPATR(HI)
+     A            SCRM07        75A  B 14  6CHECK(LC) DSPATR(HI)
+     A            SCRM08        75A  B 15  6CHECK(LC) DSPATR(HI)
+     A            SCRM09        75A  B 16  6CHECK(LC) DSPATR(HI)
+     A            SCRM10        75A  B 17  6CHECK(LC) DSPATR(HI)
+     A            SCRM11        75A  B 18  6CHECK(LC) DSPATR(HI)
+     A            SCRM12        75A  B 19  6CHECK(LC) DSPATR(HI)
+     A            SCRM13        75A  B 20  6CHECK(LC) DSPATR(HI)
+     A            SCRM14        75A  B 21  6CHECK(LC) DSPATR(HI)
+     A            SCRM15        75A  B 22  6CHECK(LC) DSPATR(HI)
+     A            SCRSBS         8A  H
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            FKEYSL        78A    23  2COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)

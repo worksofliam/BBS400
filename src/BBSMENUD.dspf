@@ -1,0 +1,121 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CA03(03)
+     A  25                                  CF02(02)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A  28                                  CF06(06)
+     A                                      CF07(07)
+     A  29                                  CF08(08)
+     A                                      CF09(09)
+     A  27                                  CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A  26                                  CF13(13)
+     A  26                                  CF14(14)
+     A  30                                  CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A*                                     CF18(18)
+     A*                                     CF19(19)
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 MENU')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A                                  1 32'BBS400 - Main Menu'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A                                  3 50'Last Login:'
+     A            SCRLLG         8A     3 62
+     A*****************************************************************
+     A          R MNUUSR
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(MENU BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A                                  6  4' Boards & Sub-Boards '
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                  6 50' System '
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                  7  5'F4'
+     A                                      COLOR(BLU)
+     A                                  7  9'List Boards & Sub-Boards'
+     A  27                              7 51'F10'
+     A  27                                  COLOR(BLU)
+     A                                  7 56'System Information'
+     A                                  8  5'F5'
+     A                                      COLOR(BLU)
+     A                                  8  9'Read new posts since Last Login Da-
+     A                                      te'
+     A                                  8 51'F11'
+     A                                      COLOR(BLU)
+     A                                  8 56'BBS Information'
+     A  28                              9  5'F6'
+     A  28                                  COLOR(BLU)
+     A                                  9  9'Post message'
+     A  26                              9 51'F13'
+     A  26                                  COLOR(BLU)
+     A                                  9 56'Users Online today'
+     A  26                             10 51'F14'
+     A  26                                  COLOR(BLU)
+     A                                 10 56'List All users'
+     A  30                             11 51'F15'
+     A  30                                  COLOR(BLU)
+     A                                 11 56'Who is online now'
+     A                                 13  4' Electronic Mail '
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                 13 50' Miscellaneous '
+     A                                      COLOR(WHT)
+     A                                      DSPATR(RI)
+     A                                 14  5'F7'
+     A                                      COLOR(BLU)
+     A                                 14  9'Read messages sent to you'
+     A                                 14 51'F16'
+     A                                      COLOR(BLU)
+     A                                 14 56'Change User Options'
+     A  29                             15  5'F8'
+     A  29                                  COLOR(BLU)
+     A                                 15  9'Send message to another user'
+     A                                 15 51'F17'
+     A                                      COLOR(BLU)
+     A                                 15 56'View Text Files (IFS)'
+     A                                 16  5'F9'
+     A                                      COLOR(BLU)
+     A                                 16  9'Send message to the SysOp'
+     A*                                16 51'F18'
+     A*                                     COLOR(BLU)
+     A*                                16 56'External Programs'
+     A*                                16 51'F19'
+     A*                                     COLOR(BLU)
+     A*                                16 56'View/Answer Polls'
+     A          R MNUSOP
+     A                                      OVERLAY
+     A                                 21  8' BBS Administration '
+     A                                      COLOR(PNK)
+     A                                 21  5'F2'
+     A                                      COLOR(BLU)
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 23  5'F3'
+     A                                      COLOR(RED)
+     A                                 23 10'End BBS session'
+     A                                      COLOR(RED)
+     A            MSGLIN        78A    24  2DSPATR(HI)

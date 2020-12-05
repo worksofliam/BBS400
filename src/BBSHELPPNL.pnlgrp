@@ -1,0 +1,281 @@
+:PNLGRP.
+.**********************************************************************
+:HELP NAME=WELCM.
+.**********************************************************************
+BBS400 - Help
+:P.A Bulletin Board System or BBS is a computer server running software
+that allows users to connect to the system using a terminal program.
+Once logged in, the user can perform actions like reading news and
+bulletins, and exchanging messages with other users.
+:P.The first public dial-up BBS was developed by Ward Christensen and
+Randy Suess. Computerized Bulletin Board System, or CBBS, officially
+went online on 16 February 1978, and had 253,301 total callers until it
+was finally retired.
+:P.BBS400 is what I believe to be the first and only BBS software for
+IBM AS/400 computers. I developed it on my own AS/400e Model 150 with
+RPG IV (aka ILE RPG) and CLP.
+:P.Local users on my network can use any kind of terminal emulator,
+though it's stongly encouraged to use a 5250 emulator to fully enjoy
+all the different functionalities and colours. Internet users are
+connecting through a SSL tunnel.
+:EHELP.
+.**********************************************************************
+:HELP NAME=LOGIN.
+.**********************************************************************
+Login - Help
+:P.This is the Login page of BBS400.
+Registered users can login by entering their User and Password.
+:EHELP.
+:HELP NAME=LGNUSR.
+User & Password - Help
+:P.Enter here your BBS nickname.
+It may be that it is not the same as on this AS/400.
+:P.When typing the password, the characters will not be visible.
+:P.If you are a :HP1.new user:EHP1., type NEW as User and leave the
+Password blank, to initiate the :HP2.New User Registration:EHP2..
+:EHELP.
+.**********************************************************************
+:HELP NAME=NEWUSR.
+.**********************************************************************
+New User Registration - Help
+:P.This is the screen that collects the data necessary for the
+registration of a new user.
+:P.Except :HP1.Nickname:EHP1. and the two fields for
+:HP1.Password:EHP1., all the fields are optional.
+:P.Also, you can mark certain fields as :HP2.Private:EHP2. if you wish
+to fill the information, but do not wish to share it with other users.
+For example, you may want for the SysOp to know your e-mail address in
+case of wanting some possible notifications.
+:P.Entering a :HP1.Y:EHP1. in the column :HP1.Private?:EHP1. will mark
+that specific field as private and it will not shown in the different
+User's Lists on the BBS.
+:P.When a :HP1.Y:EHP1. is entered in the field :HP1.Notify when
+receiving new messages?:EHP1., every time another BBS user sends a
+message to you, a message will be sent to your AS/400 user. Therefore,
+this only makes sense if you are logging in to the BBS with the same
+username as your AS/400 user. If your AS/400 user is different or you
+do not have an AS/400 user in this system, leave it as :HP1.N:EHP1..
+:P.Once you have at least entered a :HP1.Nickname:EHP1. and the two
+:HP1.Passwords:EHP1., press Enter. You will get a message if the
+registration was succesful, in which case you can press F12 to go back
+to the Login screen and enter your newly created credentials.
+:P.Please bare in mind that when a new user is created the SysOp may
+specified it as to have low level Access Level, and therefore it may
+be that not all options in the BBS are available to you at this
+moment. When and how you get more Access is entirely to the discretion
+of the SysOp.
+:EHELP.
+.**********************************************************************
+:HELP NAME=USROPT.
+.**********************************************************************
+User Options - Help
+:P.In this screen a user can change the personal data that is shown
+to other users, as well as some options and the Password used to log
+in in the BBS.
+:P.Most personal data is optional, but it also can be filled and make
+it private by specifying a Y in the specific field :HP2.Private?:EHP2..
+:EHELP.
+.**********************************************************************
+:HELP NAME=MENU.
+.**********************************************************************
+Main Menu - Help
+:P.This menu displays all the options that the BBS is offering.
+:P.Options are accessed by pressing the corresponding F key. If for
+a specific option you do not see the corresponding F key, it means that
+your user does not have enough Access Level for that option. The Access
+Levels are configured by the SysOp.
+:P.If you are not using a 24 function keys keyboard, you can trigger
+the functions F13 to F24 by pressing Shift + F1 to F12. For example,
+Shift+F1 correspond to F13.
+:P.Pressing F3 will end the current BBS session and you will have to
+login again.
+:EHELP.
+.**********************************************************************
+:HELP NAME=BRDL.
+.**********************************************************************
+Boards List - Help
+:P.Computer Boards and Sub-Boards are a imitation of the physical
+boards you may find in a culture centre, university, workplace, etc.
+The goal is to allow people to post messages within topics, so that
+other people interested in a particular subject may read it and reply.
+:P.You can find more information online at:
+:HP1.https://en.wikipedia.org/wiki/Bulletin_board_system:EHP1.
+:P.The concept of Boards in BBS400 is as if each Board is a space for
+a specific idea (e.g. news, sports, programming, AS/400). Messages are
+not posted to Boards. Instead, messages are posted to Sub-Boards that
+belong to a Board. Thus, for example a BBS can have a Board for Sports
+and different Sub-Boards for Tennis, Football, Basketball. Messages are
+posted to the Sub-Boards.
+:P.The column :HP2.Opt:EHP2. allows you to enter different values to
+perform different operations on individiual Boards.
+:P.Type the option number next to a Board and press Enter.
+You can type the same option next to more than one Board at a time,
+and you can also type different options next to different Boards at the
+same time.
+:EHELP.
+.**********************************************************************
+:HELP NAME=SBRDL.
+.**********************************************************************
+Sub-Boards List - Help
+:P.The concept of Boards in BBS400 is as if each Board is a space for
+a specific idea (e.g. news, sports, programming, AS/400). Messages are
+not posted to Boards. Instead, messages are posted to Sub-Boards that
+belong to a Board. Thus, for example a BBS can have a Board for Sports
+and different Sub-Boards for Tennis, Football, Basketball. Messages are
+posted to the Sub-Boards.
+:P.The column :HP2.Opt:EHP2. allows you to enter different values to
+perform different operations on individiual Boards.
+:P.Type the option number next to a Board and press Enter.
+You can type the same option next to more than one Board at a time,
+and you can also type different options next to different Boards at the
+same time.
+:EHELP.
+.**********************************************************************
+:HELP NAME=MSGL.
+.**********************************************************************
+Sub-Board's Messages List - Help
+:P.Messages posted to a Sub-Board are listed in this screen.
+:P.The column :HP2.Opt:EHP2. allows you to enter different values to
+perform different operations on individiual Messages.
+:P.Option :HP2.7=Reply:EHP2. allows you to post a new message to the
+current Sub-Board, with the same subject as the selected Message.
+The Subject of the new Message will be prefixed with the text Re:
+:P.Type the option number next to a Message and press Enter.
+You can type the same option next to more than one Message at a time,
+and you can also type different options next to different Messages at
+the same time.
+:P.Pressing :HP2.F6=Post message:EHP2. you can post a new message to
+the current Sub-Board.
+:EHELP.
+.**********************************************************************
+:HELP NAME=MSGLLLD.
+.**********************************************************************
+Messages Since Last Login Date - Help
+:P.In this screen a user can see a list of all Messages from all
+Sub-Boards, that have been posted since the last date that the user
+logged in to the BBS. It is a nice way of keeping up to date with
+messages, without having to go one by one through each Sub-Board on
+each Board.
+:P.Option :HP2.7=Reply:EHP2. allows to post directly reply to a message
+on a specific Sub-Board.
+:EHELP.
+.**********************************************************************
+:HELP NAME=RDMSG.
+.**********************************************************************
+Read Message - Help
+:P.This screen shows a specific message selected previously by the user
+in the Sub-Board's Message List.
+:P.Pressing :HP2.F6=Reply to Post:EHP2. allows the user to reply to
+the message, in the same Sub-Board it was posted.
+:P.Pressing :HP2.F7=Reply to User:EHP2. allows the user to send a
+private reply message to the user that posted the message. Indicated by
+From:
+:EHELP.
+.**********************************************************************
+:HELP NAME=NEWMSG.
+.**********************************************************************
+Post/Send Message - Help
+:P.From this screen, a user can either post a message to a specific
+Sub-Board or send a message to another user. It depends from were this
+screen was called.
+:P.When posting messages to a Sub-Board with :HP2.F6 Post Message:EHP2.
+from the Main Menu, the user can press :HP2.F4=Prompt:EHP2. in the
+fields next to :HP2.Posting on ::EHP2. to select the Board and
+Sub-Board from the list of available ones on the BBS.
+:P.When posting messages to a Sub-Board with options or keys on
+Sub-Boards List, the Board and Sub-Board fields will be pre-selected.
+:P.When sending a message to another user with :HP2.F8 Send message to
+another user:EHP2. from the Main Menu. the user must fill the field
+:HP2.Message to ::EHP2. with the name of a valid BBS user.
+:P.When sending a message to the SysOp, the field :HP2.Message to :
+:EHP2. is pre-filled with SysOp.
+:P.Once the text has been written, pressing :HP2.F6=Send:EHP2. will
+post the message in the corresponding Sub-Board.
+:P.The message can contain a maximum of 1125 characters, as specified
+in the screen itself. There is no word wrap. The message will be
+displayed eactly as it has been typed.
+:EHELP.
+.**********************************************************************
+:HELP NAME=U2UMSGL.
+.**********************************************************************
+User-to-User Messages - Help
+:P.It is very typical for a BBS system to allow its users to send
+messages to other users within the BBS. And BBS400 is not different.
+:P.This screen shows a list of all messages that the current user have
+received from other users.
+:P.With the option :HP2.3=Reply:EHP2. a message can be directly
+replied to the original sender (From).
+:P.Column :HP2.Sta.:EHP2. indicates the status of the message. The
+possible values are:
+:UL.
+:LI.:HP2.R:EHP2. - Message have been read.
+:LI.:HP2.U:EHP2. - Message have not been read.
+:LI.:HP2.D:EHP2. - Message have been marked for deletion.
+:EUL.
+:P.With the option :HP2.7=Mark Read/Unread:EHP2. the user can change
+the status of one or more messages from Read to Unread, and vice versa.
+:P.Messages marked for deletion cannot be unmarked.
+:P.When deletion happens? Well, that is actually up to the SysOp. The
+author of BBS400 provides a series of tools for the SysOps, and one of
+these tools performs the physical delete of the record from the DB2
+table. When this tool is run, is entirely up to the SysOp. You may find
+that in some BBS the messages are never entirely deleted and just stay
+marked as deleted.
+:EHELP.
+.**********************************************************************
+:HELP NAME=SYSINF.
+.**********************************************************************
+System Information - Help
+:P.This screen shows some information concerning the AS/400 system in
+which the BBS is running.
+:P.The SysOp can restrict the view of this screen to a minimum Access
+Level, so it may not be available to all users.
+:EHELP.
+.**********************************************************************
+:HELP NAME=USRL.
+.**********************************************************************
+Users List - Help
+:P.This screen offers different content depending from were it was
+called on the Main Menu. It just gives some statistical information.
+:P.The personal data, like Location, Gender or e-mail can be hidden by
+each user if they wish to. See help for
+:LINK PERFORM='DSPHELP USROPT'.F16 Change user Options:ELINK. for more
+information.
+:P.From :HP2.F13 Users Online today:EHP2. will give a list of all users
+that have logged in the BBS for the current day.
+:P.From :HP2.F14 List All users:EHP2. will give a list of all users
+that registered in the BBS.
+:P.From :HP2.F15 Who is online now:EHP2. will give a list of all users
+that currently logged in in the BBS.
+:P.The SysOp can restrict the view of this screen to a minimum Access
+Level, so it may not be available to all users.
+:EHELP.
+.**********************************************************************
+:HELP NAME=IFSL.
+.**********************************************************************
+:P.The Integrated File System (IFS) is a part of OS/400 that supports
+stream input/output and storage management similar to personal computer
+and UNIX operating systems.
+:P.The SysOp may want to share stream files for viewing. This files
+are plain text files, and usually contain long text files with relevant
+information about the BBS. For example, BBS400 is provided with two
+files that list the changes done for each release version (changelog)
+and a list of features that are planned for future releases (roadmap).
+:P.To display a file simply enter the option :HP2.5=Display:EHP2. in
+the column :HP2.Opt:EHP2. of the file you wish to read. The file will
+be displayed. Use the normal keys for roll up and roll down to navigate
+through the length of the file. To exit the display view, simple press
+:HP2.F3=Exit:EHP2.
+:EHELP.
+.**********************************************************************
+:HELP NAME=GENCNF.
+.**********************************************************************
+General Configuration - Help
+:P.This screen allows the Administrator of the BBS (SysOp) to configure
+several parameters of the BBS.
+:EHELP.
+:HELP NAME=GCBBSNAM.
+BBS Name - Help
+:P.:HP2.BBS Name:EHP2. Is the name you give to your BBS.
+:EHELP.
+:EPNLGRP.

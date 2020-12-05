@@ -1,0 +1,73 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CA03(03 'Exit')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 LOGIN')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R HEADER
+     A                                      OVERLAY
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A                                  3  3'Welcome to'
+     A                                      COLOR(PNK)
+     A            SCRNAM        40A  O  3 14COLOR(RED)
+     A                                  5  8'Open hours : 10am to 10pm (CET)'
+     A                                      COLOR(YLW)
+     A                                  5 42'System backups run on Sundays'
+     A*****************************************************************
+     A          R BODY
+     A                                      OVERLAY
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(LOGIN BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A          H                           HLPPNLGRP(LGNUSR BBSHELPPNL)
+     A                                      HLPARA(*FLD SCRUSR)
+     A                                  7  3'This BBS is running on an IBM AS/4-
+     A                                      00, therefore is strongly recommend-
+     A                                      ed that'
+     A                                      COLOR(BLU)
+     A                                  8  9'you use a 5250 terminal emulator i-
+     A                                      nstead of an standard Telnet.'
+     A                                      COLOR(BLU)
+     A                                  9 13'Otherwise, the user experience wil-
+     A                                      l be highly impacted.'
+     A                                      COLOR(BLU)
+     A                                 13  2'Enter your User and Password on th-
+     A                                      is BBS and then press Enter.'
+     A N32                             14  2'If you are a new user, type'
+     A N32                             14 30'NEW'
+     A                                      COLOR(YLW)
+     A N32                             14 34'as'
+     A N32                             14 37'User'
+     A                                      DSPATR(HI)
+     A N32                             14 42'and leave'
+     A N32                             14 52'Password'
+     A                                      DSPATR(HI)
+     A N32                             14 61'blank.'
+     A  32                             17 32'The BBS is currently CLOSED to new-
+     A                                       users.'
+     A                                      COLOR(WHT)
+     A                                 17  4'User . . :'
+     A                                      DSPATR(HI)
+     A                                 18  4'Password :'
+     A                                      DSPATR(HI)
+     A            SCRUSR        10A  B 17 17
+     A            SCRPAS        10A  B 18 17DSPATR(ND)
+     A  33                             19  7' The BBS is currently in Maintenan-
+     A                                      ce Mode. Please try again later. '
+     A                                      COLOR(RED)
+     A                                      DSPATR(RI)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A            SCRVER        15   O 20 60
+     A                                      COLOR(RED)
+     A                                 21 61'(C) 2020 David Asta'
+     A                                      COLOR(PNK)
+     A                                 22 61'Under MIT License'
+     A                                      COLOR(WHT)
+     A                                 23  3'F3=Exit'
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A  O 24  2DSPATR(HI)

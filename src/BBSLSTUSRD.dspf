@@ -1,0 +1,95 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF05(05 'Refresh')
+     A                                      CF10(10 'Additional Info')
+     A                                      CF12(12 'Go back')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 USRL')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 23  2'F5=Refresh   F10=Additional Inform-
+     A                                      ation   F12=Go back'
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A  O 24  2
+     A                                      DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B 10  3VALUES(' ' '2' '4' '6')
+     A            SCRNIC        10A  O 10  6
+     A  45                                  DSPATR(HI)
+     A            SCRLVL         2Y 0O 10 17EDTCDE(1)
+     A            SCRLCC         2A  O 10 21
+     A                                 10 24'-'
+     A            SCRLCT        28A  O 10 26
+     A            SCRDAT         8A  O 10 55
+     A            SCRTIM         8A  O 10 64
+     A            SCRNLG         5Y 0  10 74EDTCDE(1)
+     A                                 11  6'Registered:'
+     A                                      DSPATR(HI)
+     A            SCRREG         8A  O 11 18
+     A                                 11 27'Gender:'
+     A                                      DSPATR(HI)
+     A            SCRGND         1A  O 11 35
+     A                                 11 37'e-mail:'
+     A                                      DSPATR(HI)
+     A            SCREML        35A  O 11 45
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLDROP(CF10)
+     A                                      SFLSIZ(20)
+     A                                      SFLPAG(6)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(USRL BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A            SCRSCR        10A  O  1  3
+     A  30                              1 26'BBS400 - Users Online Now'
+     A  30                                  DSPATR(HI)
+     A  31                              1 26'BBS400 - Users Online Today'
+     A  31                                  DSPATR(HI)
+     A  32                              1 26'BBS400 - Users List (All)'
+     A  32                                  DSPATR(HI)
+     A  33                              1 26'BBS400 - Users Management'
+     A  33                                  DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3
+     A                                      COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22
+     A                                      COLOR(BLU)
+     A            SCRLVD        15A  O  3 25
+     A                                      COLOR(WHT)
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A N33                              7  3'6=Send a Message'
+     A N33                                  COLOR(BLU)
+     A  33                              7  3'2=Change Access Level   4=Delete  -
+     A                                       6=Send a Message'
+     A  33                                  COLOR(BLU)
+     A  30                              9  2'Opt User       Lvl Location       -
+     A                                                         Logged in       -
+     A                                        # Logons'
+     A                                      DSPATR(HI)
+     A  31                              9  2'Opt User       Lvl Location       -
+     A                                                         Last Logged in  -
+     A                                        # Logons'
+     A                                      DSPATR(HI)
+     A  32                              9  2'Opt User       Lvl Location       -
+     A                                                         Last Logged in  -
+     A                                        # Logons'
+     A                                      DSPATR(HI)
+     A  33                              9  2'Opt User       Lvl Location       -
+     A                                                         Last Logged in  -
+     A                                        # Logons'
+     A                                      DSPATR(HI)

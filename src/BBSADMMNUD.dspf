@@ -1,0 +1,59 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A*                                     CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF24(24)
+     A          R HEADER
+     A                                      OVERLAY
+     A            SCRSCR        10A  O  1  3
+     A                                  1 27' BBS400 - Administration Menu '
+     A                                      DSPATR(RI) COLOR(RED)
+     A            SCRBBS        40A  O  2  3COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22COLOR(BLU)
+     A            SCRLVD        15A  O  3 25COLOR(WHT)
+     A          R MNUADM
+     A                                      OVERLAY
+     A                                  6  5'F13'
+     A                                      COLOR(BLU)
+     A                                  6 10'General configuration'
+     A                                  7  5'F14'
+     A                                      COLOR(BLU)
+     A                                  7 10'Boards & Sub-Boards'
+     A                                  8  5'F15'
+     A                                      COLOR(BLU)
+     A                                  8 10'Users Management'
+     A                                  9  5'F16'
+     A                                      COLOR(BLU)
+     A                                  9 10'Access Levels'
+     A*                                10  5'F17'
+     A*                                     COLOR(BLU)
+     A*                                10 10'External Programs'
+     A                                 11  5'F18'
+     A                                      COLOR(BLU)
+     A                                 11 10'New User default values'
+     A                                 12  5'F19'
+     A                                      COLOR(BLU)
+     A                                 12 10'Text Files (IFS)'
+     A                                 14  5'F24'
+     A                                      COLOR(BLU)
+     A                                 14 10'Set Maintenance Mode'
+     A  33                             14 31'ON'
+     A  33                                  COLOR(RED)
+     A N33                             14 31'OFF'
+     A N33                                  COLOR(WHT)
+     A          R FOOTER
+     A                                      OVERLAY
+     A                                 23  5'F12=Go back'
+     A                                      COLOR(BLU)
+     A            MSGLIN        78A    24  2DSPATR(HI)

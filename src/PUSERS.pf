@@ -1,0 +1,25 @@
+                                            UNIQUE
+                R RUSER
+                  USRNCK        10A         TEXT('BBS Nickname')
+                  USRSTA         1A         TEXT('E=Enabled, D=Disabled')
+                  USRLVL         2P 0       TEXT('Access Level')
+                  USRREG          L         TEXT('Registered')
+                  USRRNA        40A         TEXT('Real Name')
+                                            ALWNULL
+                  USRPAS        32A         TEXT('Password')
+                  USRGND         1A         TEXT('Gender')
+                                            ALWNULL
+                  USRCTR         2A         TEXT('Country Code')
+                                            ALWNULL
+                  USRCTY        40A         TEXT('City')
+                                            ALWNULL
+                  USREML        40A         TEXT('e-mail')
+                                            ALWNULL
+                  USRLLD          L         TEXT('Last Login Date')
+                                            ALWNULL
+                  USRLLT          T         TEXT('Last Login Time')
+                                            ALWNULL
+                  USRNLG         6P 0       TEXT('Number of logons')
+                  USRHID         4A         TEXT('Hide from other users')
+                  USRNFY         1A         TEXT('Notify New Messages')
+                K USRNCK

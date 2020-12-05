@@ -1,0 +1,46 @@
+                                            DSPSIZ(24 80 *DS3)
+                                            CF05(05 'Refresh')
+                                            CF06(05 'Create')
+                                            CF12(05 'Go back')
+                R FOOTER
+                                            OVERLAY
+                                       23  2'F5=Refresh   F6=Create   F12=Go ba-
+                                            ck'
+                                            COLOR(BLU)
+                  MSGLIN        78A  O 24  2
+                                            DSPATR(HI)
+                R SF                        SFL
+                  SCROPT         1A  B 10  3VALUES(' ' '2' '4' '5')
+                  BRDSHT    R        O 10  7REFFLD(RBOARD/BRDSHT *LIBL/PBOARDS)
+                  BRDLNG    R        O 10 17REFFLD(RBOARD/BRDLNG *LIBL/PBOARDS)
+                  BRDALV    R        O 10 59REFFLD(RBOARD/BRDALV *LIBL/PBOARDS)
+                                            EDTCDE(2)
+                R SFLCTL                    SFLCTL(SF)
+                                            OVERLAY
+        40                                  SFLDSP
+                                            SFLDSPCTL
+        41                                  SFLCLR
+        42                                  SFLEND(*MORE)
+                                            SFLSIZ(20)
+                                            SFLPAG(13)
+                  SCRSCR        10A  O  1  3
+                                        1 26'BBS400 - Boards List'
+                                            COLOR(WHT)
+                  SCRBBS        40A  O  2  3
+                                            COLOR(RED)
+                                        1 73DATE
+                                            EDTCDE(Y)
+                                        2 73TIME
+                  SCRNCK        10A  O  3  3
+                                            COLOR(BLU)
+                                            DSPATR(RI)
+                                        3 15'Level:'
+                  SCRLVL         2Y 0O  3 22COLOR(BLU)
+                  SCRLVD        15A  O  3 25COLOR(WHT)
+                                        6  2'Type options, press Enter.'
+                                            COLOR(BLU)
+                                        7  3'2=Edit   4=Delete   5=Display'
+                                            COLOR(BLU)
+                                        9  2'Opt  Board                        -
+                                                            Access Min. Lvl.'
+                                            DSPATR(HI)

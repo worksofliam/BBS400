@@ -1,0 +1,4 @@
+                R RUUMSG                    PFILE(PUUMSGS)
+                K UUMRCP
+                K UUMDAT                    DESCEND
+                K UUMTIM                    DESCEND
