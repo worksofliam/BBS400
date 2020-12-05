@@ -3,7 +3,7 @@ BBS400 is a Bulletin Board System (BBS) for IBM AS/400 computers.
 
 I believe BBS400 is the first and only BBS software for IBM midrange computers. If you have heard of any other, please let me know and I will change this sentence.
 
-![BBS400](https://github.com/asmCcoder/BBS400/blob/master/screenshots/mainmenu.png "BBS400")
+![BBS400](screenshots/mainmenu.png "BBS400")
 
 I was very fond of BBSes before the Internet and I think this was never done for AS/400. Of course, companies were not interested and individuals couldn't afford buying one.
 
