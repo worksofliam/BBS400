@@ -9,7 +9,7 @@ I was very fond of BBSes before the Internet and I think this was never done for
 
 Old AS/400 are being retired and nowadays it is possible to get hold of one. I'm the proud owner of an AS/400e Model 150 running OS/400 V4R5, in which I have developed BBS400 using ILE RPG and CLP.
 
-If you are curious, you can access it with a 5250 emulator connecting to dasta400.freeddns.org at port 29012 and SSL/TLS enabled. Once at the signon screen enter BBS400 as user and password and then the BBS program will be started. It is usually running on weekdays between 10am to 10pm CET.
+If you are curious, you can access it with a 5250 emulator connecting to dasta400.freeddns.org at port 29012 and TLS enabled ([Wiki how to connect](https://github.com/asmCcoder/BBS400/wiki/How-to-connect-to-test-environment)). Once at the signon screen enter BBS400 as user and password and then the BBS program will be started. It is usually running on weekdays between 10am to 10pm CET.
 
 ## Current Features
 
