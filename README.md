@@ -1,10 +1,9 @@
-# BBS400
-BBS400 is a Bulletin Board System (BBS) for IBM AS/400 computers.
+# Bulletin Board System (BBS) for IBM AS/400 computers
 
 I believe BBS400 is the first and only BBS software for IBM midrange computers. If you have heard of any other, please let me know and I will change this sentence.
 
-![BBS400](screenshots/mainmenu.png "BBS400")
 ![BBS400 Login](screenshots/login.png "BBS400 Login")
+![BBS400](screenshots/mainmenu.png "BBS400")
 
 I was very fond of BBSes before the Internet and I think this was never done for AS/400. Of course, companies were not interested and individuals couldn't afford buying one.
 
@@ -85,13 +84,22 @@ When the SysOp is doing maintenance tasks (e.g. backup, installing new release),
 
 ## How to install
 
+### From source code
+
 If you got the source code:
 * Edit the *#BUILD* CLP and change the values of &LIBOBJ and &LIBDTA to what you likes. By the default are PBBS400OBJ and PBBS400DTA. I have two, because I prefer to have programs separated from data. It makes easier to just backup the data library instead of all.
 * Once changed. Compile it and CALL it. It will compile everything and run a small SQL statement.
 * After the compilation is finished, call BBS400PROD with 2 parameters: the name of the OBJ lib and the name of the DTA lib.
-* The BBS will be started in Maintenance Mode and with user SYSOP created. Password is also SYSOP.
 
-I recommend to first go to *Change User Options* (F16) and change the password. Next go to to *BBS Administration* menu (F2) and start configuring the BBS. Once finished, from the *BBS Administration* menu, press F24 to set the Maintenance Mode OFF and allow users to register.
+### From SAVF
+
+* Upload the SAVF to your system.
+* RSTOBJ 
+* call BBS400PROD with 2 parameters: the name of the OBJ lib and the name of the DTA lib.
+
+The BBS will be started in Maintenance Mode and with user SYSOP created. Password is also SYSOP.
+
+Once the BBS is running, I recommend to first go to *Change User Options* (F16) and change the password. Next go to to *BBS Administration* menu (F2) and start configuring the BBS. Once finished, from the *BBS Administration* menu, press F24 to set the Maintenance Mode OFF and allow users to register.
 
 ## Roadmap
 
