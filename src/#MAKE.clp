@@ -11,59 +11,13 @@
 /* Change this VALUE, to build INTO a different Library              */
              DCL        VAR(&LIBOBJ) TYPE(*CHAR) LEN(10) +
                           VALUE('PBBS400OBJ')
-             DCL        VAR(&LIBDTA) TYPE(*CHAR) LEN(10) +
-                          VALUE('PBBS400DTA')
-/*********************************************************************/
-/* Remove LIBS from Library List Entry                               */
-             RMVLIBLE   LIB(&LIBOBJ)
-             MONMSG     MSGID(CPF2110) /* LIB doesn't exist */
-             MONMSG     MSGID(CPF2104) /* LIB isn't in the LIBLE */
-             RMVLIBLE   LIB(&LIBDTA)
-             MONMSG     MSGID(CPF2110) /* LIB doesn't exist */
-             MONMSG     MSGID(CPF2104) /* LIB isn't in the LIBLE */
-/*********************************************************************/
-/* Delete existing destination libraries                             */
-             DLTLIB     LIB(&LIBOBJ)
-             MONMSG     MSGID(CPF2110) /* LIB doesn't exist */
-             DLTLIB     LIB(&LIBDTA)
-             MONMSG     MSGID(CPF2110) /* LIB doesn't exist */
-/*********************************************************************/
-/* Re-create destination libraries                                   */
-             CRTLIB     LIB(&LIBOBJ) TEXT('BBS400''s Objects')
-             CRTLIB     LIB(&LIBDTA) TEXT('BBS400''s Data')
 /*********************************************************************/
 /* Add LIBS to Library List Entry                                    */
              ADDLIBLE   LIB(&LIBOBJ) POSITION(*FIRST)
              MONMSG     MSGID(CPF2103) /* LIB already in LIBLE */
-             ADDLIBLE   LIB(&LIBDTA) POSITION(*FIRST)
-             MONMSG     MSGID(CPF2103) /* LIB already in LIBLE */
 /*********************************************************************/
 /* Compile PNLGRP files                                              */
         CRTPNLGRP  PNLGRP(&LIBOBJ/BBSHELPPNL) SRCFILE(&LIBSRC/&RELEASE)
-/*********************************************************************/
-/* Compile PF files                                                  */
-          CRTPF      FILE(&LIBDTA/PACCLVS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PBOARDS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PCONFIG) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PEXTPGMS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PIFSFILES) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PINVALNICK) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PLOGGED) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PMESSGS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PPOLLSA) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PPOLLSQ) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PSBORDS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PSESSIONS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PUSERS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTPF      FILE(&LIBDTA/PUUMSGS) SRCFILE(&LIBSRC/&RELEASE)
-/*********************************************************************/
-/* Compile LF files                                                  */
-          CRTLF      FILE(&LIBDTA/LLOGGED) SRCFILE(&LIBSRC/&RELEASE)
-          CRTLF      FILE(&LIBDTA/LMESSGS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTLF      FILE(&LIBDTA/LMESSGSUID) SRCFILE(&LIBSRC/&RELEASE)
-          CRTLF      FILE(&LIBDTA/LSESSIONS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTLF      FILE(&LIBDTA/LUSERS) SRCFILE(&LIBSRC/&RELEASE)
-          CRTLF      FILE(&LIBDTA/LUUMSGSRCP) SRCFILE(&LIBSRC/&RELEASE)
 /*********************************************************************/
 /* Compile DSPF files                                                */
           CRTDSPF    FILE(&LIBOBJ/BBSAACCLVD) SRCFILE(&LIBSRC/&RELEASE)
@@ -128,14 +82,9 @@
           CRTCLPGM   PGM(&LIBOBJ/BBSINFC) SRCFILE(&LIBSRC/&RELEASE)
           CRTCLPGM   PGM(&LIBOBJ/BBSSYSINFC) SRCFILE(&LIBSRC/&RELEASE)
           CRTCLPGM   PGM(&LIBOBJ/BBSWELCC) SRCFILE(&LIBSRC/&RELEASE)
-          CRTCLPGM   PGM(&LIBOBJ/BBS400) SRCFILE(&LIBSRC/&RELEASE)
-/*********************************************************************/
-/* Initialise Databases                                              */
-             RUNSQLSTM  SRCFILE(&LIBSRC/&RELEASE) SRCMBR(INITDBS) +
-                          COMMIT(*NONE)
+          CRTCLPGM   PGM(&LIBOBJ/BBS400PROD) SRCFILE(&LIBSRC/&RELEASE)
 /*********************************************************************/
 /* Remove LIBS from Library List Entry                               */
              RMVLIBLE   LIB(&LIBOBJ)
-             RMVLIBLE   LIB(&LIBDTA)
 
              ENDPGM

@@ -4,7 +4,7 @@
              DCL        VAR(&LIBDTA) TYPE(*CHAR) LEN(10)
 
              DCL        VAR(&VERSION) TYPE(*CHAR) LEN(6) +
-                          VALUE('V0R0M0')
+                          VALUE('V0R1M0')
 
          /* Set up Library List */
              RMVLIBLE   LIB(&LIBOBJ)
@@ -18,7 +18,7 @@
              MONMSG     MSGID(CPF2103)
 
          /* Create DTAARA in QTEMP */
-             CRTDTAARA  DTAARA(QTEMP/BBS400DTA) TYPE(*CHAR) LEN(150) +
+             CRTDTAARA  DTAARA(QTEMP/BBS400DTA) TYPE(*CHAR) LEN(151) +
                           VALUE(&VERSION) TEXT('DTAARA for BBS400')
              MONMSG     MSGID(CPF1023)
 

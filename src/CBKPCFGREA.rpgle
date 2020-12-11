@@ -62,5 +62,15 @@
      C     wCfgKey       CHAIN     PCONFIG                            81
      C   81              GOTO      ENDOFSR
      C                   EVAL      wCfgNUSRNF = CNFVAL
+      * Get Hide SysOp from Users List
+     C                   EVAL      wCfgKey = 'HIDESO'
+     C     wCfgKey       CHAIN     PCONFIG                            81
+     C   81              GOTO      ENDOFSR
+     C                   EVAL      wCfgHIDESO = CNFVAL
+      * Get Highlight SysOp's messages
+     C                   EVAL      wCfgKey = 'HLSOMS'
+     C     wCfgKey       CHAIN     PCONFIG                            81
+     C   81              GOTO      ENDOFSR
+     C                   EVAL      wCfgHLSOMS = CNFVAL
      C     ENDOFSR       TAG
      C                   ENDSR

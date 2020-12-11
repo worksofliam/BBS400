@@ -1,0 +1,12 @@
+                                            UNIQUE
+                R RPOLL
+                  POLUID         8A         TEXT('Poll NAME')
+                  POLSTA         1A         TEXT('Status Open/Closed/Deleted')
+                  POLQUE        30A         TEXT('Question')
+                  POLAN1        30A         TEXT('Answer 1')
+                  POLAN2        30A         TEXT('Answer 2')
+                  POLAN3        30A         TEXT('Answer 3')
+                  POLAN4        30A         TEXT('Answer 4')
+                  POLAN5        30A         TEXT('Answer 5')
+                  POLEND          L
+                K POLUID

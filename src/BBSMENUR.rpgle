@@ -6,13 +6,13 @@
       *
       * This program shows the Main Menu of the BBS to a logged in User
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSMENUD  CF   E             WORKSTN
      FPSESSIONS UF A E             DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
       * Variables
      D wBlanks         S             45A   INZ(*BLANKS)
      D wMode           S              1A
@@ -28,7 +28,7 @@
      C     *INZSR        BEGSR
      C                   EVAL      SCRSCR = 'BBSMENU'
       * Get values from DTAARA and show them on the screen
-     D/COPY DVBBS400/V0R0M0,CBKHEADER
+     D/COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Get Last Login Date from DTAARA too
      C                   IN        wDTAARA
      C                   EVAL      SCRLLG = wUserLstLogin
@@ -134,13 +134,16 @@
       * F17=View Text Files (IFS)
      C                   CALL      'BBSIFSFILR'
      C                   PARM                    wMode
-     C*                  WHEN      *IN18 = *ON
+     C                   WHEN      *IN18 = *ON
       * F18=External Programs
-     C*                  EVAL      wMode = 'U'
-     C*                  CALL      'BBSETPGMSR'
-     C*                  WHEN      *IN19 = *ON
+     C                   EVAL      wMode = 'U'
+     C                   CALL      'BBSETPGMSR'
+     C                   PARM                    wMode
+     C                   WHEN      *IN19 = *ON
       * F19=View/Answer Polls
-      * ToDo
+     C                   EVAL      wMode = 'U'
+     C                   CALL      'BBSPOLLSLR'
+     C                   PARM                    wMode
       * SysOp keys
      C                   WHEN      *IN02 = *ON AND *IN25 = *ON
      C                   CALL      'BBSADMMNUR'

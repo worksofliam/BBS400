@@ -15,8 +15,8 @@
      A  30                                  CF15(15)
      A                                      CF16(16)
      A                                      CF17(17)
-     A*                                     CF18(18)
-     A*                                     CF19(19)
+     A                                      CF18(18)
+     A                                      CF19(19)
      A                                      HELP
      A                                      ALTHELP(CA01)
      A                                      HLPTITLE('BBS400 MENU')
@@ -100,12 +100,12 @@
      A                                 16  5'F9'
      A                                      COLOR(BLU)
      A                                 16  9'Send message to the SysOp'
-     A*                                16 51'F18'
-     A*                                     COLOR(BLU)
-     A*                                16 56'External Programs'
-     A*                                16 51'F19'
-     A*                                     COLOR(BLU)
-     A*                                16 56'View/Answer Polls'
+     A                                 16 51'F18'
+     A                                      COLOR(BLU)
+     A                                 16 56'External Programs'
+     A                                 17 51'F19'
+     A                                      COLOR(BLU)
+     A                                 17 56'View/Answer Polls'
      A          R MNUSOP
      A                                      OVERLAY
      A                                 21  8' BBS Administration '

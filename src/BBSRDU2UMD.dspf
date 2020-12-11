@@ -16,10 +16,20 @@
      A          R SF                        SFL
      A            SCROPT         1A  B 10  3VALUES(' ' '3' '4' '5' '7')
      A            SCRSBJ        40A  O 10  6
+     A  45                                  COLOR(PNK)
+     A  46                                  COLOR(RED)
      A            SCRSND        10A  O 10 48
+     A  45                                  COLOR(PNK)
+     A  46                                  COLOR(RED)
      A            SCRDAT         8A  O 10 59
+     A  45                                  COLOR(PNK)
+     A  46                                  COLOR(RED)
      A            SCRTIM          T  O 10 68TIMFMT(*HMS)
+     A  45                                  COLOR(PNK)
+     A  46                                  COLOR(RED)
      A            SCRSTA         1A  O 10 78
+     A  45                                  COLOR(PNK)
+     A  46                                  COLOR(RED)
      A            SCRMUI        32A  H
      A*****************************************************************
      A          R SFLCTL                    SFLCTL(SF)

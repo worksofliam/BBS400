@@ -7,7 +7,7 @@
       * This program shows the list of Sub-Boards that the user can access,
       *   depending on the user's Access Level
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 25 - Roll key
@@ -19,10 +19,10 @@
      FBBSSBRLD  CF   E             WORKSTN
      F                                     SFILE(SF:wRRN)
      FPSBORDS   UF A E           K DISK
-     FPMESSGS   IF   E           K DISK
+     FPMESSGS   UF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
       * Constants
      D cUp             C                   CONST('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
      D cLo             C                   CONST('abcdefghijklmnopqrstuvwxyz')
@@ -45,7 +45,7 @@
      D                                     for posting messages in this Sub-Boa-
      D                                     rd.')
       * Variables
-     D/COPY DVBBS400/V0R0M0,CBKUSEWINS
+     D/COPY DVBBS400/CURRENTSRC,CBKUSEWINS
      D pMode           S              1A
      D pBoardID        S              8A
      D wRRN            S              4P 0
@@ -76,8 +76,11 @@
      C     KSBORDS       KLIST
      C                   KFLD                    SCRBRD
      C                   KFLD                    SCRSBS
+     C     KMESSGS       KLIST
+     C                   KFLD                    SCRBRD
+     C                   KFLD                    SCRSBS
       * Get values from DATAARA and show them on screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Initialise variables and load subfile
      C                   EVAL      SCRSCR = 'BBSSBRL'
      C                   MOVEL     wUserLvl      wUserLvlD
@@ -304,7 +307,7 @@
       * Delete Sub-Board (only from Administration Menu)
       **********************************************************************
      C     DeleteSBoard  BEGSR
-      *         Ask for confirmation before deleting
+      * Ask for confirmation before deleting
      C     'Delete'      CAT       SCRSBS:1      wConfirmQ
      C                   EVAL      wConfirmA = 'N'
      C                   EVAL      wConfirmF3 = *OFF
@@ -316,6 +319,13 @@
      C     KSBORDS       CHAIN     PSBORDS
      C                   IF        %FOUND
      C                   DELETE    RSBORD
+      * Delete Messages too
+     C     KMESSGS       SETLL     PMESSGS
+     C     KMESSGS       READE     PMESSGS
+     C                   DOU       %EOF
+     C                   DELETE    RMESSG
+     C     KMESSGS       READE     PMESSGS
+     C                   ENDDO
      C                   ENDIF
      C                   ENDIF
      C                   ENDSR

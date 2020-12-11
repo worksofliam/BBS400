@@ -268,6 +268,54 @@ through the length of the file. To exit the display view, simple press
 :HP2.F3=Exit:EHP2.
 :EHELP.
 .**********************************************************************
+:HELP NAME=POLLL.
+.**********************************************************************
+Polls - Help
+:P.Polls are a place in which users are asked for their opinions about
+a specific topic.
+:P.As a user, you can vote in any Open poll as many times as you want,
+but only the last answer is taken in consideration. In other words, you
+can vote in a poll and later on change your answer. The last answer
+will be the one counting.
+:P.Polls have some characteristics:
+:UL.
+:LI.Can be created and edited only by the SysOp.
+:LI.Can have a maximum of five possible answers.
+:LI.Can have an end date.
+:EUL.
+:EHELP.
+.**********************************************************************
+:HELP NAME=POLL.
+.**********************************************************************
+Poll - Help
+:P.This screen shows the poll you selected from the Polls' List.
+:P. The X marks the spot. In this case, it marks which answer did you
+select. If there is no X, it means you did not answer this poll yet.
+You can answer by pressing :HP2.F10=Change Vote:EHP2.. After that, the
+fields for voting will be available. Enter an X in the answer you want
+and press :HP2.F10=Confirm Vote:EHP2. You should see a message that
+tells you that your vote was successfully changed and also you will
+see that the number of votes (:HP2.# Votes:EHP2.) and percentages have
+been updated.
+:EHELP.
+.**********************************************************************
+:HELP NAME=EPGMSL.
+.**********************************************************************
+External Programs List - Help
+:P.This screen shows the list of External Programs that the current
+user can access, as per Access Level.
+:P.By entering a :HP2.5=Run:EHP2. as Option, the specific program will
+be launched. At the end of the launched program, the control will
+return to this list.
+:EHELP.
+.**********************************************************************
+:HELP NAME=EPGMSA.
+.**********************************************************************
+External Programs Administration - Help
+:P.In this screen the SysOp can Add new External Programs and, Edit or
+Delete existing External Programs.
+:EHELP.
+.**********************************************************************
 :HELP NAME=GENCNF.
 .**********************************************************************
 General Configuration - Help

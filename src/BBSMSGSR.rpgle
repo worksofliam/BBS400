@@ -7,16 +7,15 @@
       * This program shows all messages from a specific Sub-Board, ordered
       *   descent by posted date/time
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 25 - Roll key
       * 40 - SFLDSP
       * 41 - SFLCLR
       * 42 - SFLEND(*MORE)
-      * 43 - Highlight Sender in RED if is a SysOp (Acc. Lvl 99)
-      * 44 - Highlight Sender in PNK if is a Co-Sysop (Acc. Lvl 90-98)
-      * 45 - Highlight Sender in YLW if is same as current user
+      * 43 - Highlight whole record in RED if is a SysOp (Acc. Lvl 99)
+      * 44 - Highlight Sender in WHT if is same as current user
       * 92 - NOT FOUND for CHAIN
       **********************************************************************
      FBBSMSGSD  CF   E             WORKSTN
@@ -26,7 +25,11 @@
      FPSBORDS   IF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
+      * Constants
+     D cErrLvlLowP     C                   CONST('Your Access Level is too low -
+     D                                     for posting messages in this Sub-Boa-
+     D                                     rd.')
       * Variables
      D pBoardUID       S              8A
      D pSBoardUID      S              8A
@@ -36,6 +39,7 @@
      D wRcpnt          S             10A
      D wBlanks         S             45A   INZ(*BLANKS)
      D wSubject        S             45A
+     D wUserLvlD       S              2P 0
      ***********************************************************************
      C                   WRITE     FOOTER
      C                   EXFMT     SFLCTL
@@ -70,8 +74,9 @@
      C                   KFLD                    pSBoardUID
      C                   EVAL      SCRSCR = 'BBSMSGS'
       * Get values from DATAARA and show them on screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Initialise variables and indicators, and load subfile
+     C                   MOVEL     wUserLvl      wUserLvlD
      C                   SETOFF                                       434445
      C                   Z-ADD     0             wRRN
      C                   EXSR      LoadSFL
@@ -86,12 +91,17 @@
      C                   ENDIF
       * F6=Post message
      C                   IF        *IN06 = *ON
+      * Check Access Level to Post
+     C                   IF        wUserLvlD >= SBRPLV
      C                   EVAL      wRcpnt = pBoardUID
      C                   CALL      'BBSNEWMSGR'
      C                   PARM                    wMode
      C                   PARM                    wBlanks
      C                   PARM                    wRcpnt
      C                   PARM                    pSBoardUID
+     C                   ELSE
+     C                   EVAL      MSGLIN = cErrLvlLowP
+     C                   ENDIF
      C                   ENDIF
       * F12=Go back
      C                   IF        *IN12 = *ON
@@ -179,8 +189,13 @@
      C                   EVAL      SCRMUI = MSGUID
       * Highlight Sender's Nickname?
      C                   IF        MSGSND = wUser
-     C                   EVAL      *IN45 = *ON
+     C                   EVAL      *IN44 = *ON
      C                   ELSE
-     C                   EVAL      *IN45 = *OFF
+     C                   EVAL      *IN44 = *OFF
+     C                   ENDIF
+     C                   IF        MSGSND = 'SYSOP' AND wHLSOMS = 'Y'
+     C                   EVAL      *IN43 = *ON
+     C                   ELSE
+     C                   EVAL      *IN43 = *OFF
      C                   ENDIF
      C                   ENDSR

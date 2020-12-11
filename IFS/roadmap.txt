@@ -1,0 +1,20 @@
+ -=====================================-
+ -= BBS400 Planned Features (Roadmap) =-
+ -=====================================-
+  This is a non-exhaustive list of feaures I have currently in mind.
+  The list is not ordered by any particular priority.
+
++ Show dates in American format (MM/DD/YY). Currently it's DD/MM/YY only.
++ Allow to reply to a post from the same screen when displaying the post.
++ Make subfiles expanding. Currently it's using Load-all, and therefore
+  there is a limitation of loading a maximum of 9999 records in a subfile.
+
+ -=====================================-
+ -= Ready for V1R1M0 release          =-
+ -=====================================-
+* Highlight Unread messages in a different colour.
+* Add an Admin option to hide (Y/N) SysOp from list of Users.
+* Polls (allow to create, answer, view).
+* Calling external programs.
+* When deleting a Sub-Board, delete messages from DB too.
+* Highlight SysOp's messages if PCONFIG.HISOPS = 'Y'.

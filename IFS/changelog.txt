@@ -1,0 +1,14 @@
+-====================-
+-= BBS400 Changelog =-
+-====================-
+
+V1R1M0: User-to-User messages highlighted when Unread or Deleted.
+        Users can view and vote to polls created by the SysOp.
+        Users can launch (CALL) External programs configured by the SysOp.
+        SysOp can configure from Administration, that the SysOp user
+          doesn't appear in the public Users Lists (all, now, today).
+        SysOp Tool - Check users' expirations days and change Access Level.
+        When deleting a Sub-Board, messages are deleted too.
+        Highlighting of SysOp's messages can be configured by the SysOp.
+
+V0R0M0: Beta release.

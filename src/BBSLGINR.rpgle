@@ -13,7 +13,7 @@
       **********************************************************************
       * Compiler flags
      H ALWNULL(*USRCTL)
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 30 - *ON = Valid Username/Password
@@ -29,7 +29,7 @@
      FPSESSIONS UF A E             DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
      D dsTodayNowC     DS
      D  wTodNowTime                   6A
      D  wTodNowDate                   6A
@@ -80,6 +80,11 @@
       *        it was not logged in. Check Password
      C   31              EXSR      ChkUserPass
       *       user/password correct
+      * Check Access Level is not zero
+     C                   IF        USRLVL = 0
+     C                   EVAL      MSGLIN = cUserPasErr
+     C                   GOTO      ENDLOGIC
+     C                   ENDIF
      C   30              EXSR      ProceedLogin
      C                   ELSE
      C                   EVAL      MSGLIN = cUserPasErr
@@ -176,6 +181,16 @@
      C     wCfgKey       CHAIN     PCONFIG                            41
      C   41              GOTO      ENDOFSR
      C                   EVAL      wMAINTM = CNFVAL
+      * Get Hide SysOp from Users Lists
+     C                   EVAL      wCfgKey = 'HIDESO'
+     C     wCfgKey       CHAIN     PCONFIG                            41
+     C   41              GOTO      ENDOFSR
+     C                   EVAL      wHIDESO = CNFVAL
+      * Highlight SysOp's messages
+     C                   EVAL      wCfgKey = 'HLSOMS'
+     C     wCfgKey       CHAIN     PCONFIG                            41
+     C   41              GOTO      ENDOFSR
+     C                   EVAL      wHLSOMS = CNFVAL
      C     ENDOFSR       TAG
      C                   OUT       wDTAARA
      C                   UNLOCK    wDTAARA

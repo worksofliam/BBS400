@@ -7,7 +7,7 @@
       * This program shows a window that allows the user to enter a single
       *   character that represent Yes or No to a specific question.
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSWINYNW CF   E             WORKSTN
       **********************************************************************

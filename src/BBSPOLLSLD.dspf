@@ -1,32 +1,28 @@
      A                                      DSPSIZ(24 80 *DS3)
      A                                      CF05(05 'Refresh')
-     A                                      CF06(06 'Post')
+     A  33                                  CF06(06 'Create')
      A                                      CF12(12 'Go back')
+     A                                      CF17(17 'Filter')
      A                                      HELP
      A                                      ALTHELP(CA01)
-     A                                      HLPTITLE('BBS400 MSGL')
+     A                                      HLPTITLE('BBS400 POLLL')
      A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
      A*****************************************************************
      A          R FOOTER
      A                                      OVERLAY
-     A                                 23  2'F5=Refresh   F6=Post message   F12-
-     A                                      =Go back'
-     A                                      COLOR(BLU)
+     A            KEYLST        78A  O 23  2COLOR(BLU)
      A            MSGLIN        78A  O 24  2DSPATR(HI)
      A*****************************************************************
      A          R SF                        SFL
-     A            SCROPT         1A  B 12  3VALUES(' ' '5' '7')
-     A  43                                  COLOR(RED)
-     A            SCRSBJ        45A  O 12  6
-     A  43                                  COLOR(RED)
-     A            SCRDAT         8A  O 12 52
-     A  43                                  COLOR(RED)
-     A            SCRTIM         8A  O 12 61
-     A  43                                  COLOR(RED)
-     A            SCRSND        10A  O 12 71
-     A  43                                  COLOR(RED)
-     A  44                                  COLOR(WHT)
-     A            SCRMUI        32A  H
+     A            SCROPT         1A  B 10  3VALUES(' ' '2' '3' '4' '5'         -
+     A                                      '6')
+     A            SCRQUE        30A  O 10  6
+     A            SCRVOT         6Y 0O 10 37EDTCDE(1)
+     A            SCREND         8A  O 10 46
+     A            SCRSTS         6A  O 10 58
+     A            SCRMYV         3A  O 10 66
+     A            SCRPUI         8A  H
+     A            SCRSTA         1A  H
      A*****************************************************************
      A          R SFLCTL                    SFLCTL(SF)
      A                                      OVERLAY
@@ -34,13 +30,14 @@
      A                                      SFLDSPCTL
      A  41                                  SFLCLR
      A  42                                  SFLEND(*MORE)
+     A                                      SFLDROP(CF10)
      A                                      SFLSIZ(9999)
-     A                                      SFLPAG(10)
+     A                                      SFLPAG(11)
      A                                      HLPCLR
-     A          H                           HLPPNLGRP(MSGL BBSHELPPNL)
+     A          H                           HLPPNLGRP(POLLL BBSHELPPNL)
      A                                      HLPARA(01 001 02 080)
      A            SCRSCR        10A  O  1  3
-     A                                  1 26'BBS400 - Sub-Board''s Message List'
+     A                                  1 26'BBS400 - Polls '
      A                                      DSPATR(HI)
      A            SCRBBS        40A  O  2  3
      A                                      COLOR(RED)
@@ -55,19 +52,14 @@
      A                                      COLOR(BLU)
      A            SCRLVD        15A  O  3 25
      A                                      COLOR(WHT)
-     A                                  5  2'Board . . :'
-     A                                      DSPATR(HI)
-     A            SCRBRS         8A  O  5 14
-     A            SCRBRL        30A  O  5 24
-     A                                  6  2'Sub-Board :'
-     A                                      DSPATR(HI)
-     A            SCRSBS         8A  O  6 14
-     A            SCRSBL        30A  O  6 24
-     A                                  8  2'Type options, press Enter.'
+     A                                  6  2'Type options, press Enter.'
      A                                      COLOR(BLU)
-     A                                  9  3'5=Display   7=Reply'
-     A                                      COLOR(BLU)
-     A                                 11  2'Opt Subject                       -
-     A                                                      Date     Time      -
-     A                                      Posted by'
+     A  33                              7  3'2=Edit   3=Close   4=Delete   5=Di-
+     A                                      splay   6=Vote'
+     A  33                                  COLOR(BLU)
+     A N33                              7  3'5=Display   6=Vote'
+     A N33                                  COLOR(BLU)
+     A                                  9  2'Opt Question                      -
+     A                                       # Votes  End Date    Status  Voted-
+     A                                       by me?'
      A                                      DSPATR(HI)

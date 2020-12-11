@@ -9,13 +9,13 @@
       * INDICATORS USED:
       * 33 - *ON = BBS is in Maintenance Mode
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSADMMNUDCF   E             WORKSTN
      FPCONFIG   UF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
       * Variables
      D wCfgKey         S              6A
      D wMode           S              1A
@@ -30,7 +30,7 @@
      C     *INZSR        BEGSR
      C                   EVAL      SCRSCR = 'BBSADMMNU'
       * Get values from DTAARA and show them on the screen
-     D/COPY DVBBS400/V0R0M0,CBKHEADER
+     D/COPY DVBBS400/CURRENTSRC,CBKHEADER
      C                   EXSR      UpdMaintOnScr
      C                   ENDSR
       **********************************************************************
@@ -58,9 +58,11 @@
      C                   WHEN      *IN16 = *ON
       * F16=Access Levels
      C                   CALL      'BBSAACCLVR'
-     C*                  WHEN      *IN17 = *ON
-      * F17=External Programs
-     C*                  CALL      'BBSAEPGMSR'
+     C                   WHEN      *IN17 = *ON
+      * F17=Polls
+     C                   EVAL      wMode = 'A'
+     C                   CALL      'BBSPOLLSLR'
+     C                   PARM                    wMode
      C                   WHEN      *IN18 = *ON
       * F18=New User default values
      C                   CALL      'BBSADNUDFR'
@@ -68,6 +70,11 @@
       * F19=Text Files (IFS)
      C                   EVAL      wMode = 'A'
      C                   CALL      'BBSIFSFILR'
+     C                   PARM                    wMode
+     C                   WHEN      *IN20 = *ON
+      * F20=External Programs
+     C                   EVAL      wMode = 'A'
+     C                   CALL      'BBSETPGMSR'
      C                   PARM                    wMode
      C                   WHEN      *IN24 = *ON
       * F24=Set Maintenance Mode ON/OFF

@@ -15,6 +15,8 @@
      D  wUserLstLogin                 8A
      D  wLvlAuths                     5A
      D  wNewUsrNtfy                  10A
+     D  wHIDESO                       1A
+     D  wHLSOMS                       1A
      D wUserLvlAuths   DS
      D  wAuthListUser                 1A
      D  wAuthSysInfor                 1A

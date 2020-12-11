@@ -9,7 +9,7 @@
       **********************************************************************
       * Compiler flags
      H ALWNULL(*USRCTL)
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 25 - Roll key
@@ -20,9 +20,7 @@
       * 40 - SFLDSP
       * 41 - SFLCLR
       * 42 - SFLEND(*MORE)
-      * 43 - Highlight Sender in RED if is a SysOp (Acc. Lvl 99)
-      * 44 - Highlight Sender in PNK if is a Co-Sysop (Acc. Lvl 90-98)
-      * 45 - Highlight Sender in YLW if is same as current user
+      * 45 - Highlight in WHT if is same as current user
       * 91 - NOT FOUND for CHAIN
       **********************************************************************
      FBBSLSTUSRDCF   E             WORKSTN
@@ -32,8 +30,8 @@
      FPUSERS    UF   E           K DISK    RENAME(RUSER:PUSER)
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
-     D/COPY DVBBS400/V0R0M0,CBKUSRHIDS
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKUSRHIDS
      D dsTodayNowC     DS
      D  wTodNowTime                   6A
      D  wTodNowDate                   6A
@@ -42,7 +40,7 @@
      D                                     t valid. Valid values listed in mess-
      D                                     age help.')
       * Variables
-     D/COPY DVBBS400/V0R0M0,CBKUSEWINS
+     D/COPY DVBBS400/CURRENTSRC,CBKUSEWINS
      D pMode           S              1A
      D wTodayNowD      S             12P 0
      D wTodNowTimeD    S              6P 0
@@ -67,7 +65,7 @@
      C     *ENTRY        PLIST
      C                   PARM                    pMode
       * Get values from DATAARA and show them on screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Get Today's date/time
      C                   TIME                    wTodayNowD
      C                   MOVEL     wTodayNowD    dsTodayNowC
@@ -217,6 +215,13 @@
       * Depending on pMode, we show different users (online, all, etc.)
       **********************************************************************
      C     LoadWhichUsrs BEGSR
+      * If is SysOp and Hide SysOp = Y and is not from Administration,
+      *  then do not show it
+     C     USRNCK        IFEQ      'SYSOP'
+     C     wHIDESO       ANDEQ     'Y'
+     C     *IN33         ANDEQ     *OFF
+     C                   GOTO      SKIPIT
+     C                   ENDIF
      C                   IF        *IN30 = *ON
       *       Only users Online Now
      C                   EXSR      Logged2SFL

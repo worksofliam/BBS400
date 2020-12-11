@@ -8,6 +8,8 @@
      D wCfgSHWALD      S              1A
      D wCfgSHWWEL      S              1A
      D wCfgNUSRNF      S             10A
+     D wCfgHIDESO      S              1A
+     D wCfgHLSOMS      S              1A
      D wCfgSurvey      DS
      D  wCfgSvyRName                  1A
      D  wCfgSvyGendr                  1A

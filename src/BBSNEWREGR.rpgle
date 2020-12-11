@@ -12,7 +12,7 @@
       **********************************************************************
       * Compiler flags
      H ALWNULL(*USRCTL)
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSNEWREGDCF   E             WORKSTN
      F                                     INFDS(dsINFDS)
@@ -20,8 +20,8 @@
      FPINVALNICKIF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
-     D/COPY DVBBS400/V0R0M0,CBKUSRHIDS
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKUSRHIDS
      D dsTodayNowC     DS
      D  wTodNowTime                   6A
      D  wTodNowDate                   6A
@@ -56,7 +56,7 @@
      D wTodNowDateD    S              6P 0
      D wTodayNowD      S             12P 0
      D wTodayNowDate   S               D
-     C/COPY DVBBS400/V0R0M0,CBKPCFGDCL
+     C/COPY DVBBS400/CURRENTSRC,CBKPCFGDCL
      ***********************************************************************
      C                   WRITE     HEADER
      C                   WRITE     FOOTER
@@ -71,7 +71,7 @@
      C                   EVAL      SCRSCR = 'BBSNEWREG'
      C                   EVAL      *IN30 = *OFF
       * Get values from DATAARA and show them on screen
-     C*COPY DVBBS400/V0R0M0,CBKHEADER
+     C*COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Get New User default values from DTAAARA
      C                   IN        wDTAARA
      C                   UNLOCK    wDTAARA

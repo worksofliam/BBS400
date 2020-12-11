@@ -7,7 +7,7 @@
       * This program allows an Administrator user to display/change the
       *   general Configuration values of the BBS stored in PCONFIG
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 80 - *ON turns DSPATR(PR), which protects fields from being changed
@@ -17,7 +17,7 @@
      FPCONFIG   UF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
       * Constants
      D cKeysDft        C                   CONST('F10=Edit   F12=Go back')
      D cKeysEdit       C                   CONST('F10=Confirm Changes   F12=Can-
@@ -27,7 +27,7 @@
      D cSavedKO        C                   CONST('There was an error while writ-
      D                                     ting to PCONFIG.')
       * Variables
-     D/COPY DVBBS400/V0R0M0,CBKPCFGDCL
+     D/COPY DVBBS400/CURRENTSRC,CBKPCFGDCL
      D wCfgKey         S              6A
      D wShowWelcome    S              1A
      ***********************************************************************
@@ -54,9 +54,11 @@
      C                   EVAL      SCRCLO = wCfgCLOSED
      C                   EVAL      SCRSAL = wCfgSHWALD
      C                   EVAL      SCRSWE = wCfgSHWWEL
+     C                   EVAL      SCRHID = wCfgHIDESO
+     C                   EVAL      SCRHLS = wCfgHLSOMS
      C                   EVAL      SCRNFY = wCfgNUSRNF
       * Get values from DATAARA and show them on screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
      C                   ENDSR
       **********************************************************************
       * Check Function keys pressed by the user
@@ -139,6 +141,22 @@
      C  N81              UPDATE    CONFIG                               81
      C   81              GOTO      UPDKO
      C                   ENDIF
+      * Hide SysOp from User Lists?
+     C     SCRHID        IFNE      wCfgHIDESO
+     C                   EVAL      wCfgKey = 'HIDESO'
+     C     wCfgKey       CHAIN     PCONFIG                            81
+     C  N81              EVAL      CNFVAL = SCRHID
+     C  N81              UPDATE    CONFIG                               81
+     C   81              GOTO      UPDKO
+     C                   ENDIF
+      * Hide SysOp from User Lists?
+     C     SCRHLS        IFNE      wCfgHLSOMS
+     C                   EVAL      wCfgKey = 'HLSOMS'
+     C     wCfgKey       CHAIN     PCONFIG                            81
+     C  N81              EVAL      CNFVAL = SCRHLS
+     C  N81              UPDATE    CONFIG                               81
+     C   81              GOTO      UPDKO
+     C                   ENDIF
       * Notify New User Registration
      C     SCRNFY        IFNE      wCfgNUSRNF
      C                   EVAL      wCfgKey = 'NUSRNF'
@@ -156,4 +174,4 @@
      C                   EVAL      *IN80 = *ON
      C                   ENDSR
       **********************************************************************
-     D/COPY DVBBS400/V0R0M0,CBKPCFGREA
+     D/COPY DVBBS400/CURRENTSRC,CBKPCFGREA

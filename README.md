@@ -9,8 +9,6 @@ I was very fond of BBSes before the Internet and I think this was never done for
 
 Old AS/400 are being retired and nowadays it is possible to get hold of one. I'm the proud owner of an AS/400e Model 150 running OS/400 V4R5, in which I have developed BBS400 using ILE RPG and CLP.
 
-If you are curious, you can access it with a 5250 emulator connecting to dasta400.freeddns.org at port 29012 and TLS enabled ([Wiki how to connect](https://github.com/asmCcoder/BBS400/wiki/How-to-connect-to-test-environment)). Once at the signon screen enter BBS400 as user and password and then the BBS program will be started. It is usually running on weekdays between 10am to 10pm CET.
-
 ## Current Features
 
 * Multiple Boards and Sub-Boards, where user can post messages of up to 1125 characters.
@@ -18,6 +16,8 @@ If you are curious, you can access it with a 5250 emulator connecting to dasta40
 * See list of users (All, logged today, online now).
 * Send private messages to other BBS users.
 * View Integrated File System (IFS) files.
+* Create/Answer polls.
+* Launch (CALL) External Programs.
 * Help available on all screens.
 * Notification of new message received (only if BBS user is same as AS/400 user).
 * Admistration menu accessible only for SysOps (like a QSECOFR of the BBS)
@@ -41,6 +41,8 @@ If you are curious, you can access it with a 5250 emulator connecting to dasta40
     * Grant/Deny access to send messages to other users.
   * Configure default values for new registered accounts.
   * Add available IFS files.
+  * Create polls for a specific topic, with a maximum of five answers for each poll.
+  * Configure External Programs that user can call from the BBS.
   * Turn On/Off Maintenance Mode.
 
 ## Concepts
@@ -97,26 +99,34 @@ If you got the source code:
 * RSTOBJ 
 * call BBS400PROD with 2 parameters: the name of the OBJ lib and the name of the DTA lib.
 
-The BBS will be started in Maintenance Mode and with user SYSOP created. Password is also SYSOP.
+### Post-Installation
 
-Once the BBS is running, I recommend to first go to *Change User Options* (F16) and change the password. Next go to to *BBS Administration* menu (F2) and start configuring the BBS. Once finished, from the *BBS Administration* menu, press F24 to set the Maintenance Mode OFF and allow users to register.
+The BBS will be started in *Maintenance Mode* and with user SYSOP created. Password is also SYSOP.
+
+Once the BBS is running, I recommend to first go to *Change User Options* (F16) and change the password. Next go to *BBS Administration* menu (F2) and start configuring the BBS. Once finished, from the *BBS Administration* menu, press F24 to set the Maintenance Mode OFF and allow users to register.
+
+In the folder IFS there are provided two file (*roadmap.txt* and *changelog.txt*). BBS400 comes pre-configured with the access to these two files in */home/bbs400/* If you plan to have your IFS files in another directory. Go to *BBS Administration* menu (F2), then to *Text Files (IFS)* (F19) and change the path with option *3=Change Path*, or use *4=Delete* if you don't want to have them.
 
 ## Roadmap
 
 This is a non-exhaustive list of feaures I have currently in mind:
 
 * Show dates in American format (MM/DD/YY). Currently it's DD/MM/YY only.
-* Polls (allow to create, answer, view).
 * Allow to reply to a post from the same screen when displaying the post.
-* Calling external programs.
-* Highlight Unread messages in a different colour.
-* Highlight SysOp's messages if PCONFIG.HISOPS = 'Y' in a different colour.
-* Add an Admin option to hide (Y/N) SysOp from list of Users.
-* When deleting a Sub-Board, delete messages from DB too.
 * Make subfiles expanding. Currently it's using Load-all, and therefore there is a limitation of loading a maximum of 9999 records in a subfile.
 * Investigate possibility of running it on its own subsystem (SBS).
 * Investigate possibility getting access to the BBS software directly, instead of having to signon with BBS400 account first.
 
 ## Changelog
-                                                                           
-* **V0R0M0**: Beta release.
+
+* **V1R1M0**:
+  * User-to-User messages highlighted when Unread or Deleted.
+  * Users can view and vote to polls created by the SysOp.
+  * Users can launch (CALL) External programs configured by the SysOp.
+  * SysOp can configure from Administration, that the SysOp user doesn't appear in the public Users Lists (all, now, today).
+  * SysOp Tool - Check users' expirations days and change Access Level.
+  * Highlighting of SysOp's messages can be configured by the SysOp.
+  * When deleting a Sub-Board, messages are deleted too.
+
+* **V0R0M0**:
+  * Beta release.

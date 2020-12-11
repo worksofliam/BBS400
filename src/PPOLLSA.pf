@@ -1,0 +1,7 @@
+                                            UNIQUE
+                R RANSWR
+                  ANSPUI         8A         TEXT('Poll UID')
+                  ANSUSR        10A         TEXT('User answering')
+                  ANSANS         1P 0       TEXT('Selected answer')
+                K ANSPUI
+                K ANSUSR

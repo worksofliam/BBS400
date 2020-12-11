@@ -1,0 +1,65 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A  80                                  CF06(06 'Add')
+     A                                      CF12(12 'Go back')
+     A                                      HELP
+     A                                      ALTHELP(CA01)
+     A                                      HLPTITLE('BBS400 EPGMSL')
+     A                                      HLPSCHIDX(*LIBL/BBSHELPPNL)
+     A*****************************************************************
+     A          R FOOTER
+     A                                      OVERLAY
+     A  80                             23  2'F6=Add   F12=Go back'
+     A  80                                  COLOR(BLU)
+     A N80                             23  2'F12=Go back'
+     A N80                                  COLOR(BLU)
+     A            MSGLIN        78A  O 24  2
+     A                                      DSPATR(HI)
+     A*****************************************************************
+     A          R SF                        SFL
+     A            SCROPT         1A  B  9  3VALUES(' ' '2' '4' '5')
+     A            SCRNAM        30A  O  9  8
+     A            SCRALV         2Y 0O  9 42EDTCDE(2)
+     A            SCRORD         2Y 0O  9 50EDTCDE(2)
+     A            SCRPGO        10A  O  9 59
+     A            SCRPGL        10A  O  9 71
+     A            SCROBJ        10A  H
+     A            SCRLIB        10A  H
+     A*****************************************************************
+     A          R SFLCTL                    SFLCTL(SF)
+     A                                      OVERLAY
+     A  40                                  SFLDSP
+     A                                      SFLDSPCTL
+     A  41                                  SFLCLR
+     A  42                                  SFLEND(*MORE)
+     A                                      SFLSIZ(20)
+     A                                      SFLPAG(13)
+     A                                      HLPCLR
+     A          H                           HLPPNLGRP(EPGMSL BBSHELPPNL)
+     A                                      HLPARA(01 001 02 080)
+     A            SCRSCR        10A  O  1  3
+     A                                  1 26'BBS400 - External Programs'
+     A                                      DSPATR(HI)
+     A            SCRBBS        40A  O  2  3
+     A                                      COLOR(RED)
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A            SCRNCK        10A  O  3  3COLOR(BLU)
+     A                                      DSPATR(RI)
+     A                                  3 15'Level:'
+     A            SCRLVL         2Y 0O  3 22COLOR(BLU)
+     A            SCRLVD        15A  O  3 25COLOR(WHT)
+     A                                  5  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A  80                              6  3'2=Edit   4=Delete   5=Run'
+     A  80                                  COLOR(BLU)
+     A N80                              6  3'5=Run'
+     A N80                                  COLOR(BLU)
+     A  80                              7 40'Access'
+     A  80                                  DSPATR(HI)
+     A  80                              8  2'Opt   Program Description         -
+     A                                            Lvl.    Order    Program     -
+     A                                      Library'
+     A  80                                  DSPATR(HI)
+     A N80                              8  2'Opt   Program Description'
+     A N80                                  DSPATR(HI)

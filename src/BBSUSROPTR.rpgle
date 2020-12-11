@@ -8,14 +8,14 @@
       **********************************************************************
       * Compiler flags
      H ALWNULL(*USRCTL)
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSUSROPTDCF   E             WORKSTN
      FPUSERS    UF A E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
-     D/COPY DVBBS400/V0R0M0,CBKUSRHIDS
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKUSRHIDS
       * Constants
      D cPassNoMatch    C                   CONST('Passwords do not match. Pleas-
      D                                     e enter again.')
@@ -36,7 +36,7 @@
      C     *INZSR        BEGSR
      C                   EVAL      SCRSCR = 'BBSUSROPT'
       * Get values from DATAARA and show them on screen
-     C*COPY DVBBS400/V0R0M0,CBKHEADER
+     C*COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Load User data and show it on the screen
      C                   EXSR      GetUserData
      C                   ENDSR

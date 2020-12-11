@@ -7,7 +7,7 @@
       * This program shows the list of Boards that the user can access,
       *   depending on the user's Access Level
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 25 - Roll key
@@ -24,7 +24,7 @@
      FPMESSGS   IF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
       * Constants
      D cUp             C                   CONST('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
      D cLo             C                   CONST('abcdefghijklmnopqrstuvwxyz')
@@ -39,7 +39,7 @@
      D cErrMaxLvl99    C                   CONST('Maximum Level can only be 99.-
      D                                     ')
       * Variables
-     D/COPY DVBBS400/V0R0M0,CBKUSEWINS
+     D/COPY DVBBS400/CURRENTSRC,CBKUSEWINS
      D pMode           S              1A
      D wRRN            S              4P 0
      D wUserLvlD       S              2P 0
@@ -64,7 +64,7 @@
      C                   EVAL      KEYLST = cKeysUser
      C                   ENDIF
       * Get values from DATAARA and show them on screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Declare Composite Keys
      C     KMESSGS       KLIST
      C                   KFLD                    SBRBRD

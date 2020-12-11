@@ -18,7 +18,7 @@
       **********************************************************************
       * Compiler flags
      H ALWNULL(*USRCTL)
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSNEWMSGDCF   E             WORKSTN
      F                                     INFDS(dsINFDS)
@@ -46,7 +46,7 @@
      D cKeysBeforeU2U  C                   CONST('F6=Send   F12=Cancel')
      D cKeysAfter      C                   CONST('F12=Go back')
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
      D dsTodayNowC     DS
      D  wTodNowTime                   6A
      D  wTodNowDate                   6A
@@ -75,7 +75,7 @@
      D  SCRM14
      D  SCRM15
       * Variables
-     D/COPY DVBBS400/V0R0M0,CBKUSEWINS
+     D/COPY DVBBS400/CURRENTSRC,CBKUSEWINS
      D pMode           S              1A
      D pSubject        S             45A
      D pRcpnt          S             10A
@@ -179,7 +179,7 @@
      C                   EVAL      FKEYSL = cKeysBeforeU2U
      C                   ENDSL
       * Get values from DTAARA and show them on the screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
      C                   ENDSR
       **********************************************************************
       * Check Functions keys pressed by user

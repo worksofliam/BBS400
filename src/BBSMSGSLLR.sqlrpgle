@@ -22,7 +22,7 @@
      F                                     SFILE(SF:wRRN)
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
      D dsMessages      DS
      D   wMSGBRD                      8A
      D   wMSGSBD                      8A
@@ -50,7 +50,7 @@
      C     *INZSR        BEGSR
      C                   EVAL      SCRSCR = 'BBSMSGSLL'
       * Get values from DTAARA and show them on the screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
       * Declare SQL cursor
      C/EXEC SQL
      C+  DECLARE C1 CURSOR FOR

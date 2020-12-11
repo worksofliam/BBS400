@@ -10,7 +10,7 @@
       *   by Bruce (bvinning) in 27th June 2000
       **********************************************************************
       * Compiler flags
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
      H DFTACTGRP(*NO) ACTGRP('QILE') BNDDIR('QC2LE')
       **********************************************************************
      D Cipher          PR                  extproc('_CIPHER')

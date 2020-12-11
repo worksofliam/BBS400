@@ -13,14 +13,14 @@
       **********************************************************************
       * Compiler flags
      H ALWNULL(*USRCTL)
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
      FBBSRDMSGD CF   E             WORKSTN
      FPUUMSGS   UF   E           K DISK
      FLMESSGSUIDIF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
      D dsMsgText       DS
      D  SCRM01
      D  SCRM02
@@ -75,7 +75,7 @@
      C                   EXSR      ReadU2UMsg
      C                   ENDSL
       * Get values from DTAARA and show them on the screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
      C                   ENDSR
       **********************************************************************
       * Check Functions keys pressed by user

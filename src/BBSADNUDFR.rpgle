@@ -7,7 +7,7 @@
       * This program allows an Administrator user to display/change the
       *   New User default values
       **********************************************************************
-     H/COPY DVBBS400/V0R0M0,CBKOPTIMIZ
+     H/COPY DVBBS400/CURRENTSRC,CBKOPTIMIZ
       **********************************************************************
       * INDICATORS USED:
       * 80 - *ON turns DSPATR(PR), which protects fields from being changed
@@ -17,7 +17,7 @@
      FPCONFIG   UF   E           K DISK
       **********************************************************************
       * Data structures
-     D/COPY DVBBS400/V0R0M0,CBKDTAARA
+     D/COPY DVBBS400/CURRENTSRC,CBKDTAARA
       * Constants
      D cKeysDft        C                   CONST('F10=Edit   F12=Go back')
      D cKeysEdit       C                   CONST('F10=Confirm Changes   F12=Can-
@@ -27,7 +27,7 @@
      D cSavedKO        C                   CONST('There was an error while writ-
      D                                     ting to PCONFIG.')
       * Variables
-     D/COPY DVBBS400/V0R0M0,CBKPCFGDCL
+     D/COPY DVBBS400/CURRENTSRC,CBKPCFGDCL
      D wCfgKey         S              6A
      ***********************************************************************
      C                   WRITE     HEADER
@@ -53,7 +53,7 @@
      C                   EVAL      SCREML = wCfgSvyEmail
      C                   EVAL      SCRSVY = wCfgSurvey
       * Get values from DATAARA and show them on screen
-     C/COPY DVBBS400/V0R0M0,CBKHEADER
+     C/COPY DVBBS400/CURRENTSRC,CBKHEADER
      C                   ENDSR
       **********************************************************************
       * Check Function keys pressed by the user
@@ -109,4 +109,4 @@
      C                   EVAL      *IN80 = *ON
      C                   ENDSR
       **********************************************************************
-     D/COPY DVBBS400/V0R0M0,CBKPCFGREA
+     D/COPY DVBBS400/CURRENTSRC,CBKPCFGREA
